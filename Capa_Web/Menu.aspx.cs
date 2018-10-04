@@ -18,12 +18,12 @@ namespace Capa_Web
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            /*
-             * if (Session["Autenticado"] == null)
+            
+            if (Session["Autenticado"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
-            */
+            
 
 
             List<Partido> partiData = new List<Partido>();
@@ -46,8 +46,8 @@ namespace Capa_Web
         protected void closeSession(object sender, EventArgs e)
         {
             //Acciones
+            Session["Autenticado"] = null;
             Response.Redirect("Login.aspx");
-            Session["Autenticado"]= null;
         }
     }
 }

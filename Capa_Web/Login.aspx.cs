@@ -18,7 +18,19 @@ namespace Capa_Web
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Menu.aspx");
+            Usuario usr = new Usuario();
+            SqlInterfaz sq = new SqlInterfaz();
+
+            usr.setUsername(txbxUsr.Text.ToLower());
+            usr.setPasswrd(txbxPsw.Text);
+
+            if (sq.Identificarse(usr))
+            {
+                Session["Autenticado"] = true;
+                Response.Redirect("Menu.aspx");
+            }
+
+      
         }
     }
 }
