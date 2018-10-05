@@ -17,30 +17,25 @@ namespace Capa_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";
 
-            
+            MySqlConnection conn = new MySqlConnection(MyConString);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM partidos_todos;", conn);
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(dataTable);
+
+            GridView1.DataSource = dataTable;
+            GridView1.DataBind();
+
+
             if (Session["Autenticado"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
             
-
-
-            List<Partido> partiData = new List<Partido>();
-            SqlInterfaz sq = new SqlInterfaz();
-            partiData = sq.TraerPartidos();
-
-            try {
-                grdPartidos.DataSource = partiData; //Metodo que devuelva una lista de partidos
-                grdPartidos.DataBind();
-            }
-            catch { }
-            
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void closeSession(object sender, EventArgs e)
@@ -48,6 +43,11 @@ namespace Capa_Web
             //Acciones
             Session["Autenticado"] = null;
             Response.Redirect("Login.aspx");
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

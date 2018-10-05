@@ -17,7 +17,8 @@
     
     <nav>   
             <ul>
-                <li><a class="active" href="#">Hoy</a></li>
+                <li><a class="active" href="#">Todos</a></li>
+                <li><a href="#">Hoy</a></li>
                 <li><a href="#">Ayer</a></li>
                 <li><a href="#">Noticias</a></li>
                 <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
@@ -25,42 +26,21 @@
     </nav>
 
         <div>
-            <table align="center" style="width:50%">
-                <tr>
-                    <th>Fecha</th>
-                    <th>Local</th>
-                    <th>Goles L</th>
-                    <th>Goles V</th>
-                    <th>Visitante</th>
-                    <th>Liga/Copa</th>
-                </tr>
-                <tr>
-                    <td>30/09</td>
-                    <td>Union</td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td>Gimnasia</td>
-                    <td>SuperLiga</td>
-                </tr>
-                <tr>
-                    <td>30/09</td>
-                    <td>Belgrano</td>
-                    <td>0</td>
-                    <td>1</td>
-                    <td>Huracan</td>
-                    <td>SuperLiga</td>
-                </tr>
-             
-            </table>
 
+    
+            <br />
+            <br />
+            <asp:GridView ID="GridView1"  runat="server" BorderStyle="None" CellPadding="5" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            </asp:GridView>
+
+            <br />
+
+    
         </div>
 
         <footer>
             © Copyright 2018 SemiFutbol® <span>Todos los derechos reservados</span>
         </footer>
-    
-        <asp:GridView ID="grdPartidos" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-        </asp:GridView>
     
     </form>
     </body>
