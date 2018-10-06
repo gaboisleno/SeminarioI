@@ -23,11 +23,21 @@ namespace Capa_Web
 
             usr.setUsername(txbxUsr.Text.ToLower());
             usr.setPasswrd(txbxPsw.Text);
+            
+            
 
             if (sq.Identificarse(usr))
             {
                 Session["Autenticado"] = true;
-                Response.Redirect("Menu.aspx");
+
+                if (usr.getRol().Equals("ADMIN"))
+                {
+                    Response.Redirect("AdminPage.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Menu.aspx");
+                } 
             }
 
       

@@ -26,6 +26,7 @@ namespace Capa_Web
                 newUser.setPasswrd(txbxPsw.Text);
                 newUser.setUsername(txbxUsr.Text.ToLower());
                 newUser.setEmail(txbxMail.Text.ToLower());
+                newUser.setRol("USR");
 
                 if (sq.NuevoUsuario(newUser))
                 {

@@ -28,13 +28,13 @@
 &nbsp;&nbsp;&nbsp; Nombre de usuario<br />
         <br />
         <asp:TextBox ID="txbxPsw" runat="server" TextMode="Password"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; Contrasena<br />
+&nbsp;&nbsp;&nbsp; Contraseña<br />
         <br />
         <asp:TextBox ID="txbxConPsw" runat="server" TextMode="Password"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; Confirmar contrasena<br />
+&nbsp;&nbsp;&nbsp; Confirmar contraseña<br />
         <br />
         <asp:TextBox ID="txbxMail" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp; Email<br />
+&nbsp;&nbsp;&nbsp; E-mail<br />
         <br />
         <p>
             <asp:Button ID="ButtonRegister" runat="server" OnClick="Button1_Click1" Text="Registrarme" />

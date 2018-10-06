@@ -17,9 +17,9 @@
     
     <nav>   
             <ul>
-                <li><a class="active" href="#">Todos</a></li>
-                <li><a href="#">Hoy</a></li>
-                <li><a href="#">Ayer</a></li>
+                <li><a class="active" href="#" runat="server" onserverclick="GridPartidosTodos">Todos</a></li>
+                <li><a href="#" runat="server" onserverclick="GridPartidosHoy">Hoy</a></li>
+                <li><a href="#" runat="server" onserverclick="GridPartidosAyer">Ayer</a></li>
                 <li><a href="#">Noticias</a></li>
                 <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
             </ul>

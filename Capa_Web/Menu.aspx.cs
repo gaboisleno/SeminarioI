@@ -13,21 +13,12 @@ namespace Capa_Web
 {
     public partial class Menu : System.Web.UI.Page
     {
-        
+        SqlInterfaz sq = new SqlInterfaz();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";
 
-            MySqlConnection conn = new MySqlConnection(MyConString);
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM partidos_todos;", conn);
-            conn.Open();
-            DataTable dataTable = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-            da.Fill(dataTable);
-
-            GridView1.DataSource = dataTable;
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
             GridView1.DataBind();
 
 
@@ -48,6 +39,24 @@ namespace Capa_Web
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        protected void GridPartidosAyer(object sender, EventArgs e) {
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_ayer;");
+            GridView1.DataBind();
+        }
+
+        protected void GridPartidosHoy(object sender, EventArgs e)
+        {
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_hoy;");
+            GridView1.DataBind();
+        }
+
+        protected void GridPartidosTodos(object sender, EventArgs e)
+        {
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
+            GridView1.DataBind();
         }
     }
 }

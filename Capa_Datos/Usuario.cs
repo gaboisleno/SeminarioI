@@ -38,6 +38,10 @@ namespace Capa_Datos
             return email;
         }
 
+        public string getRol() {
+            return rol;
+        }
+
         public void setPasswrd(string pass) {
             this.password = pass;
         }
@@ -48,10 +52,6 @@ namespace Capa_Datos
 
         public void setRol(string rol) {
             this.rol = rol;
-        }
-
-        public string getRol() {
-            return rol;
         }
 
         public void setId(int id) {

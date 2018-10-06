@@ -17,16 +17,21 @@
         
         <nav>   
             <ul>
-                <li><a class="active" href="#">Partidos</a></li>
-                <li><a href="#">Equipos</a></li>
-                <li><a href="#">Ligas</a></li>
+                <li><a class="active" href="#" runat="server" onserverclick="GridPartidosAdmin">Partidos</a></li>
+                <li><a href="#" runat="server" onserverclick="GridEquiposAdmin">Equipos</a></li>
+                <li><a href="#" runat="server" onserverclick="GridLigasAdmin">Ligas</a></li>
                 <li><a href="#">Usuarios</a></li>
-                <li style="float:right"><a href="Login.aspx">Cerrar sesion</a></li>
+                <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
             </ul>
     </nav>
         <div>
             <p>
                 Tabla de edicion de partidos(Insert/Update/Delete)
+                <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
+                </asp:GridView>
+                <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                </asp:DropDownList>
+                <asp:Button ID="Button1" runat="server" Text="Añadir" />
             </p>
 
         </div>

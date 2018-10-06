@@ -39,24 +39,31 @@ namespace Capa_Datos {
             {
                 AbrirConexionSql(Conexion);
                 
-                Query.CommandText = "SELECT usuario, passwrd, rol FROM usuarios WHERE usuario='" + unknow.getUsername().ToLower() + "'";
+                Query.CommandText = "SELECT usuario, passwrd, rol, id_usr, e_mail FROM usuarios WHERE usuario='" + unknow.getUsername().ToLower() + "'";
                 Query.Connection = Conexion;
 
                 //Consultar
                 consulta = Query.ExecuteReader();
 
-                //Si la consulta esta vacia
+                //Si la consulta no esta vacia
                 if (consulta.Read())
                 {
                     user.setUsername(consulta.GetString("USUARIO").ToLower());
                     user.setPasswrd(consulta.GetString("PASSWRD"));
-                    user.setRol(consulta.GetString("ROL").ToLower());
+                    user.setRol(consulta.GetString("ROL"));
+                    user.setId(consulta.GetInt32("ID_USR"));
+                    user.setEmail(consulta.GetString("E_MAIL"));
 
                     //Compara usuario y password ingresados
                     if (unknow.getUsername().Equals(user.getUsername()) && unknow.getPasswrd().Equals(user.getPasswrd()))
                     {
+                        unknow.setEmail(user.getEmail());
+                        unknow.setId(user.getId());
+                        unknow.setRol(user.getRol());
+                        unknow.setUsername(user.getUsername());
+                        unknow.setPasswrd(user.getPasswrd());
+
                         Conexion.Close();
-                        unknow = user;
                         return true;
                     }
                 }
@@ -121,54 +128,34 @@ namespace Capa_Datos {
 
             AbrirConexionSql(Conexion);
 
+            if ((BuscarUsuario(user.getUsername())==false) && (BuscarUsuarioEmail(user.getEmail())==false)) {
+                //Insertar el usuario aqui...
+                Query.CommandText = "INSERT INTO USUARIOS(USUARIO, PASSWRD, E_MAIL) VALUES ('" + user.getUsername() + "', '" + user.getPasswrd() + "', '" + user.getEmail() + "')";
+                Query.Connection = Conexion;
+                consulta = Query.ExecuteReader();
 
-            //Insertar el usuario aqui...
-            //Console.WriteLine("Insertando usuario");
-            Query.CommandText = "INSERT INTO USUARIOS(USUARIO, PASSWRD, E_MAIL) VALUES ('" + user.getUsername() + "', '" + user.getPasswrd() + "', '" + user.getEmail() + "')";
-            Query.Connection = Conexion;
-            consulta = Query.ExecuteReader();
-
-            /*try
-            {
-                AbrirConexionSql(Conexion);
-
-                if (BuscarUsuario(user.getUsername().ToLower()))
-                {
-                    //El usuario ya existe
-                    //Console.WriteLine("usuario ya existe");
-                    return false;
-                }
-                else
-                {
-                    //Insertar el usuario aqui...
-                    //Console.WriteLine("Insertando usuario");
-                    Query.CommandText = "INSERT INTO USUARIOS(USUARIO, PASSWRD, E_MAIL) VALUES ('" + user.getUsername() + "', '" + user.getPasswrd() + "', '" + user.getEmail() + "')";
-                    Query.Connection = Conexion;
-                    consulta = Query.ExecuteReader();
-
-                    /*if (BuscarUsuarioEmail(user.getEmail()))
-                    {
-                        //el mail ya existe
-                        return false;
-                    }
-                    else
-                    {
-
-                    }
-                }
-            }
-            catch
-            {
-                Console.WriteLine("Error en la funcion NuevoUsuario");
                 Conexion.Close();
-                return false;
-            }*/
+                return true;
+            }
 
             Conexion.Close();
-            return true;
+            return false;
         }
 
-        public bool BuscarUsuario(string username) {
+        public DataTable TraerConsulta(string consulta) {
+            String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";
+            MySqlConnection conn = new MySqlConnection(MyConString);
+            MySqlCommand cmd = new MySqlCommand(consulta, conn);
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(dataTable);
+            return dataTable;
+        }
+
+        public bool BuscarUsuario(string username)
+        {
 
             MySqlConnection Conexion = new MySqlConnection();
             MySqlCommand Query = new MySqlCommand();
@@ -177,11 +164,11 @@ namespace Capa_Datos {
             try
             {
                 AbrirConexionSql(Conexion);
-                
+
                 //Comprobar username
-                Query.CommandText = "SELECT usuario FROM usuarios WHERE usuario='"+username+"'";
+                Query.CommandText = "SELECT usuario FROM usuarios WHERE usuario='" + username + "'";
                 Query.Connection = Conexion;
-                
+
                 //Consultar
                 consulta = Query.ExecuteReader();
 
@@ -219,7 +206,7 @@ namespace Capa_Datos {
                 AbrirConexionSql(Conexion);
 
                 //Comprobar username
-                Query.CommandText = "SELECT mail FROM usuarios WHERE mail='" + mail+"'";
+                Query.CommandText = "SELECT E_MAIL FROM usuarios WHERE E_MAIL='" + mail+"'";
                 Query.Connection = Conexion;
 
                 //Consultar
@@ -228,10 +215,14 @@ namespace Capa_Datos {
                 //Si la consulta no esta vacia
                 if (consulta.Read())
                 {
+                    Console.WriteLine("email encontrado");
+                    Conexion.Close();
                     return true;
                 }
                 else
                 {
+                    Console.WriteLine("email no encontrado");
+                    Conexion.Close();
                     return false;
                 }
 
