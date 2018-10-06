@@ -32,6 +32,7 @@ namespace Capa_Web
                 {
                     //Mostrar Mensaje/Pagina usuario creado correctamente
                     Response.Write("Usuario creado. Intente iniciar sesion.");
+                    Response.Redirect("Login.aspx");
                 }
                 else
                 {

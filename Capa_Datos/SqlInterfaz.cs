@@ -130,7 +130,7 @@ namespace Capa_Datos {
 
             if ((BuscarUsuario(user.getUsername())==false) && (BuscarUsuarioEmail(user.getEmail())==false)) {
                 //Insertar el usuario aqui...
-                Query.CommandText = "INSERT INTO USUARIOS(USUARIO, PASSWRD, E_MAIL) VALUES ('" + user.getUsername() + "', '" + user.getPasswrd() + "', '" + user.getEmail() + "')";
+                Query.CommandText = "INSERT INTO USUARIOS(USUARIO, PASSWRD, ROL, E_MAIL) VALUES ('" + user.getUsername() + "','" + user.getPasswrd() + "','USR','" + user.getEmail() + "');";
                 Query.Connection = Conexion;
                 consulta = Query.ExecuteReader();
 
