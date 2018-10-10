@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Capa_Datos
 {
-    class Liga
+   public class Liga
     {
         private string nombre;
         private int id;

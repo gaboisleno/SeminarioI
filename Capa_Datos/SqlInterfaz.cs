@@ -235,6 +235,41 @@ namespace Capa_Datos {
             return true;
         }
 
+        public List<Liga> TraerLigas(){
+            List<Liga> ligas = new List<Liga>();
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            try
+            {
+                AbrirConexionSql(Conexion);
+
+                Query.CommandText = "SELECT * FROM ligas";
+                Query.Connection = Conexion;
+
+                //Consultar
+                consulta = Query.ExecuteReader();
+
+                while (consulta.Read())
+                {
+                    Liga l = new Liga();
+
+                    l.setId(consulta.GetInt32("ID"));
+                    l.setNombre(consulta.GetString("NOMBRE"));
+                    
+                    ligas.Add(l);
+                }
+                Conexion.Close();
+                return ligas;
+            }
+            catch
+            {
+                Console.WriteLine("Se produjo un error al buscar los partidos");
+                Conexion.Close();
+                return ligas;
+            }
+        }
     }
 
 }

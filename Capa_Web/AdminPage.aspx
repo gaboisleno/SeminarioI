@@ -18,7 +18,7 @@
         <nav>   
             <ul>
                 <li><a class="active" href="#" runat="server" onserverclick="GridPartidosAdmin">Partidos</a></li>
-                <li><a href="#" runat="server" onserverclick="GridEquiposAdmin">Equipos</a></li>
+                <li><a href="AdminPageEquipos.aspx" >Equipos</a></li>
                 <li><a href="#" runat="server" onserverclick="GridLigasAdmin">Ligas</a></li>
                 <li><a href="#">Usuarios</a></li>
                 <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>

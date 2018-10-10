@@ -15,11 +15,13 @@
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         Liga del Equipo (*)<br />
-        <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
         </asp:DropDownList>
         <p>
-            <asp:Button ID="Button1" runat="server" Text="Add Team" />
+            <asp:Button ID="Button1" runat="server" Text="Nuevo Equipo" />
         </p>
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+        </asp:GridView>
     </form>
 </body>
 </html>
