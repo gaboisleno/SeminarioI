@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -69,6 +69,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminPage.aspx" />
+    <Content Include="AdminPageEquipos.aspx" />
+    <Content Include="AdminPageLigas.aspx" />
+    <Content Include="AdminPagePartidos.aspx" />
+    <Content Include="AdminPageUsuarios.aspx" />
     <Content Include="Css\Imgs\Banner.jpg" />
     <Content Include="Css\Style.css" />
     <Content Include="Login.aspx" />
@@ -83,6 +87,34 @@
     </Compile>
     <Compile Include="AdminPage.aspx.designer.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageEquipos.aspx.cs">
+      <DependentUpon>AdminPageEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageEquipos.aspx.designer.cs">
+      <DependentUpon>AdminPageEquipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageLigas.aspx.cs">
+      <DependentUpon>AdminPageLigas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageLigas.aspx.designer.cs">
+      <DependentUpon>AdminPageLigas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPagePartidos.aspx.cs">
+      <DependentUpon>AdminPagePartidos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPagePartidos.aspx.designer.cs">
+      <DependentUpon>AdminPagePartidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageUsuarios.aspx.cs">
+      <DependentUpon>AdminPageUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageUsuarios.aspx.designer.cs">
+      <DependentUpon>AdminPageUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
