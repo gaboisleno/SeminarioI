@@ -14,35 +14,38 @@
             (Para ACTUALIZAR complete todo)<br />
             (Para BORRAR, SOLO ingrese Local, Visitante y Fecha).<br />
             <br />
-            <br />
-            Liga<br />
-            <asp:DropDownList ID="DropDownList4" runat="server">
+            A que Competicion pertenece el partido?<br />
+            <asp:DropDownList ID="DDListLiga" runat="server" OnSelectedIndexChanged="DDListLiga_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
             <br />
-            Local (*)</div>
-        <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
+            Quien es el equipo
+            Local? (*)</div>
+        <asp:DropDownList ID="DDListLocal" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
+        Quien es el equipo
         Visitante (*)<br />
-        <asp:DropDownList ID="DropDownList3" runat="server" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
+        <asp:DropDownList ID="DDListVisitante" runat="server" OnSelectedIndexChanged="DropDownList3_SelectedIndexChanged">
         </asp:DropDownList>
         <br />
         <br />
-        Fecha (*) (Formato AAAA-MM-DD)<br />
+        Que
+        Fecha es el partido? (*) (Formato AAAA-MM-DD)<br />
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <br />
-        Horario<br />
+        En que
+        Horario se juega?<br />
         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br />
         <br />
-        Gol/es local<br />
+        Cantidad de Goles Local<br />
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
         <br />
         <br />
-        Gol/es visitante<br />
+        Cantidad de Goles Visitante<br />
         <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
         <br />
         <br />

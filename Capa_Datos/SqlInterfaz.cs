@@ -73,6 +73,7 @@ namespace Capa_Datos {
             }
             catch (MySqlException e)
             {
+                Console.WriteLine(e);
                 return false;
             }
         }
@@ -140,6 +141,10 @@ namespace Capa_Datos {
 
             Conexion.Close();
             return false;
+        }
+
+        public bool NuevoEquipo(Equipo equipo) {
+            return true;
         }
 
         public DataTable TraerConsulta(string consulta) {
@@ -235,6 +240,44 @@ namespace Capa_Datos {
             return true;
         }
 
+        public List<Equipo> TraerEquipos()
+        {
+            List<Equipo> equipos = new List<Equipo>();
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            try
+            {
+                AbrirConexionSql(Conexion);
+
+                Query.CommandText = "SELECT * FROM equipos";
+                Query.Connection = Conexion;
+
+                //Consultar
+                consulta = Query.ExecuteReader();
+
+                while (consulta.Read())
+                {
+                    Equipo e = new Equipo();
+
+                    e.setId(consulta.GetInt32("ID"));
+                    e.setNombre(consulta.GetString("NOMBRE"));
+                    //e.setLiga(consulta.GetInt32("LIGA"));
+
+                    equipos.Add(e);
+                }
+                Conexion.Close();
+                return equipos;
+            }
+            catch
+            {
+                Console.WriteLine("Se produjo un error al buscar los equipos");
+                Conexion.Close();
+                return equipos;
+            }
+        }
+
         public List<Liga> TraerLigas(){
             List<Liga> ligas = new List<Liga>();
             MySqlConnection Conexion = new MySqlConnection();
@@ -271,6 +314,7 @@ namespace Capa_Datos {
             }
         }
     }
+    
 
 }
 

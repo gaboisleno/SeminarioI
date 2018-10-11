@@ -26,20 +26,18 @@ namespace Capa_Web {
             //Mostrar lista de las ligas
             ligas = sq.TraerLigas();
             foreach (Liga l in ligas){
-                DropDownList1.Items.Add(l.getNombre());
+                DDListLiga.Items.Add(l.getNombre());
             } 
 
 
         }
 
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Equipo e = new Equipo();
+            e.setNombre(txbxEquipo.Text);
+            e.setLiga(DDListLiga.Text);
+            sq.NuevoEquipo(e);
         }
     }
 }
