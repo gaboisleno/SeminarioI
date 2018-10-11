@@ -16,13 +16,14 @@
 
         <nav>   
             <ul>
-                <li><a href="#" runat="server" onserverclick="GridPartidosAdmin">Partidos</a></li>
+                <li><a href="AdminPage.aspx">Inicio</a></li>
+                <li><a href="AdminPagePartidos.aspx" >Partidos</a></li>
                 <li><a class="active" href="AdminPageEquipos.aspx" >Equipos</a></li>
-                <li><a href="#" runat="server" onserverclick="GridLigasAdmin">Ligas</a></li>
+                <li><a href="AdminPageLigas.aspx">Ligas</a></li>
                 <li><a href="#">Usuarios</a></li>
-                <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
+                
             </ul>
-        </nav>
+    </nav>
         
         <div>
             Nuevo Equipo. Los campos * son obligatorios.<br />
@@ -31,13 +32,14 @@
         <asp:TextBox ID="txbxEquipo" runat="server"></asp:TextBox>
         <br />
         Liga del Equipo (*)<br />
-        <asp:DropDownList ID="DDListLiga" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        <asp:DropDownList ID="DDListLigas" runat="server" OnSelectedIndexChanged="DDListLigas_SelectedIndexChanged">
         </asp:DropDownList>
         <p>
             <asp:Button ID="Button1" runat="server" Text="Nuevo Equipo" OnClick="Button1_Click" />
+            <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
+            </asp:GridView>
         </p>
-        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" HorizontalAlign="Center">
-        </asp:GridView>
+
     </form>
 
     <footer>

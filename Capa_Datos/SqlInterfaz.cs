@@ -77,49 +77,7 @@ namespace Capa_Datos {
                 return false;
             }
         }
-
-        public List<Partido> TraerPartidos()
-        {
-            List<Partido> partidos = new List<Partido>();
-            MySqlConnection Conexion = new MySqlConnection();
-            MySqlCommand Query = new MySqlCommand();
-            MySqlDataReader consulta;
-
-            try
-            {
-                AbrirConexionSql(Conexion);
-
-                Query.CommandText = "SELECT p.fecha AS FECHA, e.nombre AS LOCAL, p.gol_local AS L, e2.nombre AS VISITANTE, p.gol_visitante AS V, l.nombre AS LIGA FROM PARTIDOS p INNER JOIN EQUIPOS e on p.local=e.id INNER JOIN EQUIPOS e2 on p.visitante = e2.id INNER JOIN LIGAS l on p.liga = l.id ORDER BY FECHA DESC;";
-                Query.Connection = Conexion;
-
-                //Consultar
-                consulta = Query.ExecuteReader();
-
-                while (consulta.Read())
-                {
-                    Partido p = new Partido();
-
-                    p.setFecha(consulta.GetString("FECHA"));
-                    p.setLocal(consulta.GetString("LOCAL"));
-                    p.setVisitante(consulta.GetString("VISITANTE"));
-                    p.setGolLocal(consulta.GetInt32("L"));
-                    p.setGolVisitante(consulta.GetInt32("V"));
-                    p.setLiga(consulta.GetString("LIGA"));
-
-                    partidos.Add(p);
-                }
-                Conexion.Close();
-                return partidos;
-            }
-            catch
-            {
-                Console.WriteLine("Se produjo un error al buscar los partidos");
-                Conexion.Close();
-                return partidos;
-            }
-           
-        }
-
+      
         public bool NuevoUsuario(Usuario user)
         {
 
@@ -144,19 +102,42 @@ namespace Capa_Datos {
         }
 
         public bool NuevoEquipo(Equipo equipo) {
-            return true;
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+                //Insertar el usuario aqui...
+                Query.CommandText = "INSERT INTO EQUIPOS(NOMBRE,LIGA) VALUES ('" +equipo.getNombre()+ "','" + equipo.getLiga() +"');";
+                Query.Connection = Conexion;
+                consulta = Query.ExecuteReader();
+
+                Conexion.Close();
+                return true;
         }
 
-        public DataTable TraerConsulta(string consulta) {
-            String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";
-            MySqlConnection conn = new MySqlConnection(MyConString);
-            MySqlCommand cmd = new MySqlCommand(consulta, conn);
-            conn.Open();
-            DataTable dataTable = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+        public bool NuevaLiga(Liga liga)
+        {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
 
-            da.Fill(dataTable);
-            return dataTable;
+            AbrirConexionSql(Conexion);
+            //Insertar aqui...
+            if (liga.getUltimoCampeon()==0)
+            {
+                Query.CommandText = "INSERT INTO LIGAS(NOMBRE) VALUES ('" + liga.getNombre() + "');";
+            }
+            else
+            {
+                Query.CommandText = "INSERT INTO LIGAS(NOMBRE,CAMPEON_ACTUAL) VALUES ('" + liga.getNombre() + "','" +liga.getUltimoCampeon()+"');";
+            }
+            
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
         }
 
         public bool BuscarUsuario(string username)
@@ -240,6 +221,19 @@ namespace Capa_Datos {
             return true;
         }
 
+        public DataTable TraerConsulta(string consulta)
+        {
+            String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";
+            MySqlConnection conn = new MySqlConnection(MyConString);
+            MySqlCommand cmd = new MySqlCommand(consulta, conn);
+            conn.Open();
+            DataTable dataTable = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(dataTable);
+            return dataTable;
+        }
+
         public List<Equipo> TraerEquipos()
         {
             List<Equipo> equipos = new List<Equipo>();
@@ -263,7 +257,7 @@ namespace Capa_Datos {
 
                     e.setId(consulta.GetInt32("ID"));
                     e.setNombre(consulta.GetString("NOMBRE"));
-                    //e.setLiga(consulta.GetInt32("LIGA"));
+                    e.setLiga(consulta.GetInt32("LIGA"));
 
                     equipos.Add(e);
                 }
@@ -300,7 +294,7 @@ namespace Capa_Datos {
 
                     l.setId(consulta.GetInt32("ID"));
                     l.setNombre(consulta.GetString("NOMBRE"));
-                    
+                    //l.setUltimoCampeon(consulta.GetInt32("CAMPEON_ACTUAL"));
                     ligas.Add(l);
                 }
                 Conexion.Close();
@@ -313,6 +307,49 @@ namespace Capa_Datos {
                 return ligas;
             }
         }
+
+        public List<Partido> TraerPartidos()
+        {
+            List<Partido> partidos = new List<Partido>();
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            try
+            {
+                AbrirConexionSql(Conexion);
+
+                Query.CommandText = "SELECT p.fecha AS FECHA, e.nombre AS LOCAL, p.gol_local AS L, e2.nombre AS VISITANTE, p.gol_visitante AS V, l.nombre AS LIGA FROM PARTIDOS p INNER JOIN EQUIPOS e on p.local=e.id INNER JOIN EQUIPOS e2 on p.visitante = e2.id INNER JOIN LIGAS l on p.liga = l.id ORDER BY FECHA DESC;";
+                Query.Connection = Conexion;
+
+                //Consultar
+                consulta = Query.ExecuteReader();
+
+                while (consulta.Read())
+                {
+                    Partido p = new Partido();
+
+                    p.setFecha(consulta.GetString("FECHA"));
+                    p.setLocal(consulta.GetString("LOCAL"));
+                    p.setVisitante(consulta.GetString("VISITANTE"));
+                    p.setGolLocal(consulta.GetInt32("L"));
+                    p.setGolVisitante(consulta.GetInt32("V"));
+                    p.setLiga(consulta.GetString("LIGA"));
+
+                    partidos.Add(p);
+                }
+                Conexion.Close();
+                return partidos;
+            }
+            catch
+            {
+                Console.WriteLine("Se produjo un error al buscar los partidos");
+                Conexion.Close();
+                return partidos;
+            }
+
+        }
+
     }
     
 

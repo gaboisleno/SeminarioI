@@ -11,6 +11,7 @@ namespace Capa_Web {
 
         SqlInterfaz sq = new SqlInterfaz();
         List<Liga> ligas = new List<Liga>();
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,10 +24,13 @@ namespace Capa_Web {
             GridView1.DataSource = sq.TraerConsulta("SELECT * FROM equipos ORDER BY Nombre ASC;");
             GridView1.DataBind();
 
+
+            DDListLigas.Items.Clear();
             //Mostrar lista de las ligas
             ligas = sq.TraerLigas();
             foreach (Liga l in ligas){
-                DDListLiga.Items.Add(l.getNombre());
+                DDListLigas.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
+               
             } 
 
 
@@ -34,10 +38,18 @@ namespace Capa_Web {
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Equipo e = new Equipo();
-            e.setNombre(txbxEquipo.Text);
-            e.setLiga(DDListLiga.Text);
-            sq.NuevoEquipo(e);
+            Equipo equipoTemp = new Equipo();
+            equipoTemp.setNombre(txbxEquipo.Text);
+            equipoTemp.setLiga(Int32.Parse(DDListLigas.SelectedValue));
+
+            if (sq.NuevoEquipo(equipoTemp)){
+                txbxEquipo.Text = "";
+            }
+        }
+
+        protected void DDListLigas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

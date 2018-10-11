@@ -8,34 +8,49 @@ using Capa_Datos;
 
 namespace Capa_Web {
     public partial class AdminPagePartidos: System.Web.UI.Page {
+
         SqlInterfaz sq = new SqlInterfaz();
         List<Liga> ligas = new List<Liga>();
         List<Equipo> equipos = new List<Equipo>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Autenticado"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
+            if (Session["Autenticado"] == null) Response.Redirect("Login.aspx");
 
-            //Cargar las ligas
-            ligas = sq.TraerLigas();
-            foreach (Liga l in ligas)
+            if (!this.IsPostBack)
             {
-                DDListLiga.Items.Add(l.getNombre());
-            }
+                //Mostrar lista de las ligas
+                DDListLigas.Items.Clear();
+                ligas = sq.TraerLigas();
+                foreach (Liga l in ligas)
+                {
+                    DDListLigas.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
+                }
 
-            //Cargar los equipos
-            equipos = sq.TraerEquipos();
-            foreach (Liga l in ligas)
-            {
-                DDListLocal.Items.Add(l.getNombre());
-                DDListVisitante.Items.Add(l.getNombre());
+                //Mostrar lista de equipos local y visitante 
+                DDListLocal.Items.Clear();
+                equipos = sq.TraerEquipos();
+                foreach (Equipo eq in equipos)
+                {
+                    DDListLocal.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
+                    DDListVisitante.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
+                }
             }
+        }
+
+        protected void DDListLiga_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
-        
+        protected void DDListLocal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DDListVisitante_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

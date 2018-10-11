@@ -9,7 +9,7 @@ namespace Capa_Datos
     public class Equipo
     {
         private int id;
-        private string liga;
+        private int liga;
         private string nombre;
         private string pais;
 
@@ -18,7 +18,7 @@ namespace Capa_Datos
             this.nombre = nombre;
         }
 
-        public void setLiga(string liga) {
+        public void setLiga(int liga) {
             this.liga = liga;
         }
 
@@ -35,7 +35,7 @@ namespace Capa_Datos
             return this.nombre;
         }
 
-        public string getLiga() {
+        public int getLiga() {
             return this.liga;
         }
 

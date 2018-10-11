@@ -10,7 +10,7 @@ namespace Capa_Datos
     {
         private string nombre;
         private int id;
-        private string ultimo_campeon;
+        private int ultimo_campeon;
 
         //Setters
         public void setNombre(string nombre) {
@@ -21,7 +21,7 @@ namespace Capa_Datos
             this.id = id;
         }
 
-        public void setUltimoCampeon(string ultCamp) {
+        public void setUltimoCampeon(int ultCamp) {
             this.ultimo_campeon = ultCamp;
         }
 
@@ -34,7 +34,7 @@ namespace Capa_Datos
             return this.id;
         }
 
-        public string getUltimoCampeon() {
+        public int getUltimoCampeon() {
             return this.ultimo_campeon;
         }
     }
