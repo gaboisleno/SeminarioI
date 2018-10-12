@@ -12,16 +12,20 @@ namespace Capa_Datos
         private string fecha;
         private string local;
         private string visitante;
-
+        private string liga;
         private string horario;
         private int golesLocal;
         private int golesVisitante;
-
-        private string liga;
+        
 
         //Sets
         public void setFecha(string fecha) {
             this.fecha = Convert.ToDateTime(fecha).ToString("dd-MM-yyyy");
+        }
+
+        public void setHorario(string horario)
+        {
+            this.horario = horario;
         }
 
         public void setLocal(string local) {
@@ -47,6 +51,10 @@ namespace Capa_Datos
         }
 
         //Gets
+        public string getHorario() {
+            return this.horario;
+        }
+
         public string getFecha() {
             return this.fecha;
         }

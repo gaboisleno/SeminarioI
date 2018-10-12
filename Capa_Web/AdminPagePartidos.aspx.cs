@@ -52,5 +52,25 @@ namespace Capa_Web {
         {
 
         }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Partido p = new Partido();
+            p.setLiga(DDListLigas.SelectedItem.Value);
+            p.setLocal(DDListLocal.SelectedItem.Value);
+            p.setVisitante(DDListVisitante.SelectedItem.Value);
+            p.setFecha(txbxFecha.Text);
+            p.setHorario(txbxHorario.Text);
+            if (txbxGolLocal.Text=="" ) p.setGolLocal(0);
+            if (txbxGolVisitante.Text == "") p.setGolVisitante(0);
+            
+
+            sq.NuevoPartido(p);
+        }
+
+        protected void rbtnInsert_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -140,6 +140,24 @@ namespace Capa_Datos {
             return true;
         }
 
+        public bool NuevoPartido(Partido partido) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //Insertar aqui...
+            
+            Query.CommandText = "INSERT INTO PARTIDOS () VALUES ();";
+            
+
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
         public bool BuscarUsuario(string username)
         {
 
