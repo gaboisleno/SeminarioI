@@ -28,17 +28,48 @@
         <div>
             Nuevo Equipo. Los campos * son obligatorios.<br />
         </div>
-        Nombre del equipo (*)<br />
-        <asp:TextBox ID="txbxEquipo" runat="server"></asp:TextBox>
+        
         <br />
-        Liga del Equipo (*)<br />
-        <asp:DropDownList ID="DDListLigas" runat="server" OnSelectedIndexChanged="DDListLigas_SelectedIndexChanged">
-        </asp:DropDownList>
-        <p>
+        
+        <div>
+            Nuevo Equipo (*)<br />
+            <asp:TextBox ID="txbxEquipo" placeholder="Nombre" runat="server"></asp:TextBox>
+            <br />
+            Liga del Equipo (*)
+            <br />
+            
+            <asp:DropDownList ID="DDListLigas" runat="server" OnSelectedIndexChanged="DDListLigas_SelectedIndexChanged">
+            </asp:DropDownList>
+            <br />
             <asp:Button ID="Button1" runat="server" Text="Nuevo Equipo" OnClick="Button1_Click" />
-            <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
+            <br />
+            <br />
+           
+            Borrar Equipo<br />
+            <asp:TextBox ID="txbxDelete" placeholder="ID del equipo" runat="server" OnTextChanged="txbxDelete_TextChanged1"></asp:TextBox> 
+            <br />
+            <asp:Button ID="btnDelete" runat="server" Text="Borrar Equipo" OnClick="btnDelete_Click1" />
+            <br />
+            <br />
+            <br />
+            Modificar Equipo<br />
+            <asp:TextBox ID="txbxId" placeholder="ID del equipo" runat="server"></asp:TextBox>
+            <br />
+            <asp:TextBox ID="txbxUpdate" placeholder="Nuevo Nombre" runat="server"></asp:TextBox>
+            <br />
+            <asp:DropDownList ID="DropDownList1" runat="server">
+            </asp:DropDownList>
+            <br />
+            <asp:Button ID="btnUpdate" runat="server" Text="Modificar Equipo" OnClick="btnUpdate_Click" />
+            <br />
+        </div>
+        
+        <div>
+            <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
             </asp:GridView>
-        </p>
+        </div>
+            
+  
 
     </form>
 

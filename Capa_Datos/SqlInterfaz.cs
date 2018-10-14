@@ -147,10 +147,9 @@ namespace Capa_Datos {
 
             AbrirConexionSql(Conexion);
             //Insertar aqui...
-            
-            Query.CommandText = "INSERT INTO PARTIDOS () VALUES ();";
-            
 
+            Query.CommandText = "INSERT INTO PARTIDOS (FECHA,HORARIO,LOCAL,VISITANTE,GOL_LOCAL, GOL_VISITANTE,LIGA) VALUES " + "('"+partido.getFecha()+"','"+partido.getHorario()+"','"+partido.getLocal()+"','"+partido.getVisitante()+"','"+partido.getGolLocal()+"','"+partido.getGolVisitante()+"','"+partido.getLiga()+"');";                                                        
+   
             Query.Connection = Conexion;
             consulta = Query.ExecuteReader();
 
@@ -236,6 +235,89 @@ namespace Capa_Datos {
                 Console.WriteLine("Error en buscarusuariomail");
             }
 
+            return true;
+        }
+
+        public bool DeleteEquipo(int id) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //Insertar aqui...
+
+            Query.CommandText = "DELETE FROM EQUIPOS WHERE ID = "+id+";";
+
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
+        public bool DeletePartido(Partido p)
+        {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //Insertar aqui...
+
+            Query.CommandText = "DELETE FROM PARTIDOS WHERE FECHA='"+p.getFecha()+"' AND LOCAL="+p.getLocal()+" AND VISITANTE="+p.getVisitante()+";";
+
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
+        public bool DeleteLiga(int id)
+        {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //Insertar aqui...
+
+            Query.CommandText = "DELETE FROM LIGAS WHERE ID = " + id + ";";
+
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
+        public bool UpdateEquipo(Equipo n) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //
+            Query.CommandText = "UPDATE EQUIPOS SET NOMBRE='"+n.getNombre()+"' WHERE ID="+n.getId()+";";
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
+        public bool UpdatePartido(Partido p) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //
+            Query.CommandText = "UPDATE PARTIDOS SET GOL_LOCAL="+p.getGolLocal()+", GOL_VISITANTE="+p.getGolVisitante()+" WHERE FECHA='"+p.getFecha()+"' AND LOCAL="+p.getLocal()+" AND VISITANTE="+p.getVisitante()+";";
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
             return true;
         }
 

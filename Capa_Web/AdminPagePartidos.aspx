@@ -29,14 +29,16 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            <asp:Panel ID="Panel1" runat="server" Height="32px">
-                <asp:RadioButton ID="rbtnInsert" runat="server" Checked="True" Text="Nuevo Partido" />
-                <asp:RadioButton ID="rbtnUpdate" runat="server" Text="Modificar Partido" />
-                <asp:RadioButton ID="rbtnDelete" runat="server" Text="Eliminar Partido" />
+            <asp:Panel ID="Panel1" runat="server" Height="32px" style="margin-top: 1px" Width="359px">
+                <asp:RadioButton ID="rbtnIns" runat="server" AutoPostBack="True" Text="Nuevo Partido" OnCheckedChanged="rbtnIns_CheckedChanged1" />
+                <asp:RadioButton ID="rbtnUpd" runat="server" AutoPostBack="True" Text="Modificar Partido" OnCheckedChanged="rbtnUpd_CheckedChanged1" />
+                <asp:RadioButton ID="rbtnDel" runat="server" AutoPostBack="True" Text="Borrar Partido" OnCheckedChanged="rbtnDel_CheckedChanged1" />
             </asp:Panel>
+            <p style="color:red">Atencion: Modificar el partido solo cambia los Goles Local/Visitante (horario aun no implementado)</p>
+            <br />
         </div>
-            A que Competicion pertenece el partido?<br />
+            A que Competicion pertenece el partido?
+            <br />
             <asp:DropDownList ID="DDListLigas" runat="server" OnSelectedIndexChanged="DDListLiga_SelectedIndexChanged">
             </asp:DropDownList>
             <br />

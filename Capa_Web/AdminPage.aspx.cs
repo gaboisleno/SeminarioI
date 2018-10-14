@@ -19,13 +19,13 @@ namespace Capa_Web
                 Response.Redirect("Login.aspx");
             }
             
-            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos ORDER BY Fecha DESC;");
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
             GridView1.DataBind();
         }
 
 
         protected void GridPartidosAdmin(object sender, EventArgs e) {
-            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos ORDER BY Fecha DESC;");
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
             GridView1.DataBind();
 
         }
@@ -52,6 +52,11 @@ namespace Capa_Web
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

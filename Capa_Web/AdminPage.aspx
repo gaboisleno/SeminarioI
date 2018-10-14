@@ -28,7 +28,7 @@
         <div>
             <p>
                 Tabla de edicion de partidos(Insert/Update/Delete)
-                <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
+                <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 </asp:GridView>
             </p>
 

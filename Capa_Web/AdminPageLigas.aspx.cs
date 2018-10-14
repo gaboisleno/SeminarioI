@@ -14,15 +14,18 @@ namespace Capa_Web {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
-            { 
+            {
                 //Mostrar lista de equipos local y visitante 
                 DDListEquipos.Items.Clear();
                 equipos = sq.TraerEquipos();
                 foreach (Equipo eq in equipos)
                 {
-                   DDListEquipos.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
+                    DDListEquipos.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
 
                 }
+                //Mostrar la tabla de equipos
+                GridView1.DataSource = sq.TraerConsulta("SELECT * FROM Ligas ORDER BY Nombre ASC;");
+                GridView1.DataBind();
             }
         }
 
@@ -49,6 +52,16 @@ namespace Capa_Web {
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             txbxLiga.ReadOnly = true;
+        }
+
+        protected void txbxDeleteLiga_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDeleteLiga_Click(object sender, EventArgs e)
+        {
+            sq.DeleteLiga(Convert.ToInt32(txbxDeleteLiga.Text));
         }
     }
 }

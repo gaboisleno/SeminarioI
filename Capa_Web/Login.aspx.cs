@@ -42,5 +42,10 @@ namespace Capa_Web
 
       
         }
+
+        protected void txbxUsr_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

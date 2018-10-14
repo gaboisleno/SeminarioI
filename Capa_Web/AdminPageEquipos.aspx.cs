@@ -20,19 +20,20 @@ namespace Capa_Web {
                 Response.Redirect("Login.aspx");
             }
 
-            //Mostrar la tabla de equipos
-            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM equipos ORDER BY Nombre ASC;");
-            GridView1.DataBind();
+            if (!this.IsPostBack)
+            {
+                //Mostrar la tabla de equipos
+                GridView1.DataSource = sq.TraerConsulta("SELECT * FROM equipos ORDER BY Nombre ASC;");
+                GridView1.DataBind();
 
-
-            DDListLigas.Items.Clear();
-            //Mostrar lista de las ligas
-            ligas = sq.TraerLigas();
-            foreach (Liga l in ligas){
-                DDListLigas.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
-               
-            } 
-
+                DDListLigas.Items.Clear();
+                //Mostrar lista de las ligas
+                ligas = sq.TraerLigas();
+                foreach (Liga l in ligas)
+                {
+                    DDListLigas.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
+                }
+            }
 
         }
 
@@ -50,6 +51,29 @@ namespace Capa_Web {
         protected void DDListLigas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnDelete_Click1(object sender, EventArgs e)
+        {
+            sq.DeleteEquipo(Int32.Parse(txbxDelete.Text));
+        }
+
+        protected void txbxDelete_TextChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Equipo n = new Equipo();
+            n.setNombre(txbxUpdate.Text);
+            n.setId(Int32.Parse(txbxId.Text));
+            sq.UpdateEquipo(n);
         }
     }
 }

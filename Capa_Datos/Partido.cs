@@ -20,7 +20,7 @@ namespace Capa_Datos
 
         //Sets
         public void setFecha(string fecha) {
-            this.fecha = Convert.ToDateTime(fecha).ToString("dd-MM-yyyy");
+            this.fecha = fecha; //Convert.ToDateTime(fecha).ToString("dd-MM-yyyy");
         }
 
         public void setHorario(string horario)

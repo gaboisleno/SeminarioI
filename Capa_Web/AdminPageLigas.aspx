@@ -38,6 +38,15 @@
         <br />
         <br />
         <asp:Button ID="Button2" runat="server" Text="Añadir Liga" OnClick="Button2_Click" />
+        <br />
+        <br />
+        Borrar una Liga
+        <br />
+        <asp:TextBox ID="txbxDeleteLiga" placeholder="ID de la Liga" runat="server" OnTextChanged="txbxDeleteLiga_TextChanged"></asp:TextBox>
+        <br />
+        <asp:Button ID="btnDeleteLiga" runat="server" Text="Eliminar Liga" OnClick="btnDeleteLiga_Click" />
+        <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
+        </asp:GridView>
     </form>
 </body>
 </html>

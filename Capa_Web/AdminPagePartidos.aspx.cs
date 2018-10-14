@@ -61,16 +61,35 @@ namespace Capa_Web {
             p.setVisitante(DDListVisitante.SelectedItem.Value);
             p.setFecha(txbxFecha.Text);
             p.setHorario(txbxHorario.Text);
-            if (txbxGolLocal.Text=="" ) p.setGolLocal(0);
-            if (txbxGolVisitante.Text == "") p.setGolVisitante(0);
-            
 
-            sq.NuevoPartido(p);
+            if (txbxGolLocal.Text == "") p.setGolLocal(0);
+                else p.setGolLocal(Convert.ToInt32(txbxGolLocal.Text));
+                
+            if (txbxGolVisitante.Text == "") p.setGolVisitante(0);
+                else p.setGolVisitante(Convert.ToInt32(txbxGolVisitante.Text));
+
+            //
+            if (rbtnIns.Checked) sq.NuevoPartido(p);
+            else if (rbtnDel.Checked) sq.DeletePartido(p);
+            else if (rbtnUpd.Checked) sq.UpdatePartido(p);
         }
 
-        protected void rbtnInsert_CheckedChanged(object sender, EventArgs e)
+        protected void rbtnIns_CheckedChanged1(object sender, EventArgs e)
         {
+            rbtnDel.Checked = false;
+            rbtnUpd.Checked = false;
+        }
 
+        protected void rbtnUpd_CheckedChanged1(object sender, EventArgs e)
+        {
+            rbtnDel.Checked = false;
+            rbtnIns.Checked = false;
+        }
+
+        protected void rbtnDel_CheckedChanged1(object sender, EventArgs e)
+        {
+            rbtnUpd.Checked = false;
+            rbtnIns.Checked = false;
         }
     }
 }
