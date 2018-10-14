@@ -16,6 +16,7 @@ namespace Capa_Web {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Autenticado"] == null) Response.Redirect("Login.aspx");
+            rbtnIns.Checked=true;
 
             if (!this.IsPostBack)
             {

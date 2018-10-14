@@ -321,6 +321,21 @@ namespace Capa_Datos {
             return true;
         }
 
+        public bool UpdateLiga(Liga l) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            //
+            Query.CommandText = "UPDATE LIGAS SET CAMPEON_ACTUAL="+l.getUltimoCampeon()+" WHERE ID="+l.getId()+ ";";
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
         public DataTable TraerConsulta(string consulta)
         {
             String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";

@@ -29,7 +29,7 @@
             <br />
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Panel ID="Panel1" runat="server" Height="32px" style="margin-top: 1px" Width="359px">
+            <asp:Panel ID="Panel1" runat="server" Height="32px" style="margin-top: 1px" Width="833px">
                 <asp:RadioButton ID="rbtnIns" runat="server" AutoPostBack="True" Text="Nuevo Partido" OnCheckedChanged="rbtnIns_CheckedChanged1" />
                 <asp:RadioButton ID="rbtnUpd" runat="server" AutoPostBack="True" Text="Modificar Partido" OnCheckedChanged="rbtnUpd_CheckedChanged1" />
                 <asp:RadioButton ID="rbtnDel" runat="server" AutoPostBack="True" Text="Borrar Partido" OnCheckedChanged="rbtnDel_CheckedChanged1" />
@@ -56,8 +56,8 @@
         <br />
         <br />
         Que
-        Fecha es el partido? (*) (Formato AAAA-MM-DD)<br />
-        <asp:TextBox ID="txbxFecha" runat="server"></asp:TextBox>
+        Fecha es el partido? (*)<br />
+        <asp:TextBox ID="txbxFecha" placeholder="AAAA-MM-DD" runat="server"></asp:TextBox>
         <br />
         <br />
         En que
