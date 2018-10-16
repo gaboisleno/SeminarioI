@@ -20,7 +20,7 @@
                 <li><a href="AdminPagePartidos.aspx" >Partidos</a></li>
                 <li><a class="active" href="AdminPageEquipos.aspx" >Equipos</a></li>
                 <li><a href="AdminPageLigas.aspx">Ligas</a></li>
-                <li><a href="#">Usuarios</a></li>
+                <li><a href="AdminPageUsuarios.aspx">Usuarios</a></li>
                 
             </ul>
     </nav>

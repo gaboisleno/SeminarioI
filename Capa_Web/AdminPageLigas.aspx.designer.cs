@@ -58,6 +58,33 @@ namespace Capa_Web {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
+        /// Control txbxUpdate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txbxUpdate;
+        
+        /// <summary>
+        /// Control DropDownList1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// Control btnNuevoCamp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNuevoCamp;
+        
+        /// <summary>
         /// Control txbxDeleteLiga.
         /// </summary>
         /// <remarks>

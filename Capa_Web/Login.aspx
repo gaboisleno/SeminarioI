@@ -28,7 +28,7 @@
             <br />
                 <br />
                 <asp:TextBox ID="txbxUsr" placeholder="Usuario" runat="server" OnTextChanged="txbxUsr_TextChanged"></asp:TextBox>
-                <asp:TextBox ID="txbxPsw" placeholder="Contraseña" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txbxPsw" placeholder="Contraseña" runat="server" TextMode="Password"></asp:TextBox>
                 <asp:Button ID="btnLogin" runat="server" Text="Entrar" OnClick="Button1_Click" />
             <br /> 
         

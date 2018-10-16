@@ -10,6 +10,7 @@ namespace Capa_Web {
     public partial class AdminPageLigas: System.Web.UI.Page {
         SqlInterfaz sq = new SqlInterfaz();
         List<Equipo> equipos = new List<Equipo>();
+        List<Liga> ligas = new List<Liga>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,12 +18,16 @@ namespace Capa_Web {
             {
                 //Mostrar lista de equipos local y visitante 
                 DDListEquipos.Items.Clear();
+                DropDownList1.Items.Clear();
                 equipos = sq.TraerEquipos();
                 foreach (Equipo eq in equipos)
                 {
                     DDListEquipos.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
-
+                    DropDownList1.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
                 }
+
+                
+
                 //Mostrar la tabla de equipos
                 GridView1.DataSource = sq.TraerConsulta("SELECT * FROM Ligas ORDER BY Nombre ASC;");
                 GridView1.DataBind();
@@ -62,6 +67,19 @@ namespace Capa_Web {
         protected void btnDeleteLiga_Click(object sender, EventArgs e)
         {
             sq.DeleteLiga(Convert.ToInt32(txbxDeleteLiga.Text));
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNuevoCamp_Click(object sender, EventArgs e)
+        {
+            Liga lig = new Liga();
+            lig.setUltimoCampeon(Convert.ToInt32(DropDownList1.SelectedItem.Value));
+            lig.setId(Convert.ToInt32(txbxUpdate.Text));
+            sq.UpdateLiga(lig);
         }
     }
 }

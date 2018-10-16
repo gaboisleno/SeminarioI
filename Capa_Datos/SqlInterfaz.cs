@@ -336,6 +336,30 @@ namespace Capa_Datos {
             return true;
         }
 
+        public bool AdminUser(int id, int op) {
+            MySqlConnection Conexion = new MySqlConnection();
+            MySqlCommand Query = new MySqlCommand();
+            MySqlDataReader consulta;
+
+            AbrirConexionSql(Conexion);
+            switch (op) {
+                case 1:
+                    Query.CommandText = "UPDATE USUARIOS SET ROL='ADMIN' WHERE ID_USR="+id+";";
+                    break;
+                case 2:
+                    Query.CommandText = "UPDATE USUARIOS SET ROL='USR' WHERE ID_USR=" + id + ";";
+                    break;
+                case 3:
+                    Query.CommandText = "DELETE FROM USUARIOS WHERE ID_USR=" + id + ";";
+                    break;
+            }
+            Query.Connection = Conexion;
+            consulta = Query.ExecuteReader();
+
+            Conexion.Close();
+            return true;
+        }
+
         public DataTable TraerConsulta(string consulta)
         {
             String MyConString = "SERVER=localhost;" + "DATABASE=semifutbol;" + "UID=root;" + "PASSWORD=rosario12;";

@@ -17,7 +17,7 @@
                 <li><a href="AdminPagePartidos.aspx" >Partidos</a></li>
                 <li><a href="AdminPageEquipos.aspx" >Equipos</a></li>
                 <li><a href="#" class="active" >Ligas</a></li>
-                <li><a href="#">Usuarios</a></li>
+                <li><a href="AdminPageUsuarios.aspx">Usuarios</a></li>
                 <li style="float:right"><a href="#">Cerrar sesion</a></li>
             </ul>
     </nav>
@@ -30,14 +30,21 @@
         Nombre de la Liga/Copa (*)<br />
         <asp:TextBox ID="txbxLiga" runat="server"></asp:TextBox>
         <br />
-        <br />
         Ultimo campeon (opcional)<br />
         <asp:DropDownList ID="DDListEquipos" runat="server" OnSelectedIndexChanged="DDListEquipos_SelectedIndexChanged">
         </asp:DropDownList>
         <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" />
         <br />
-        <br />
         <asp:Button ID="Button2" runat="server" Text="Añadir Liga" OnClick="Button2_Click" />
+        <br />
+        <br />
+        Cambiar Campeón de la Liga/Copa<br />
+        <asp:TextBox ID="txbxUpdate" placeholder="ID Liga" runat="server"></asp:TextBox>
+        <br />
+        <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+        </asp:DropDownList>
+        <br />
+        <asp:Button ID="btnNuevoCamp" runat="server" Text="Nuevo Campeón" OnClick="btnNuevoCamp_Click" />
         <br />
         <br />
         Borrar una Liga
@@ -47,6 +54,9 @@
         <asp:Button ID="btnDeleteLiga" runat="server" Text="Eliminar Liga" OnClick="btnDeleteLiga_Click" />
         <asp:GridView ID="GridView1" runat="server" HorizontalAlign="Center">
         </asp:GridView>
+           <br />
     </form>
+
+    <footer>© Copyright 2018 SemiFutbol® Todos los derechos reservados </footer>
 </body>
 </html>
