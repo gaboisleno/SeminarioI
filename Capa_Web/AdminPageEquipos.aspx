@@ -54,12 +54,12 @@
             <br />
             Modificar Equipo<br />
             <asp:TextBox ID="txbxId" placeholder="ID del equipo" runat="server"></asp:TextBox>
-            <br />
+            (*)<br />
             <asp:TextBox ID="txbxUpdate" placeholder="Nuevo Nombre" runat="server"></asp:TextBox>
-            <br />
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            (*)<br />
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
             </asp:DropDownList>
-            <br />
+            (*)<br />
             <asp:Button ID="btnUpdate" runat="server" Text="Modificar Equipo" OnClick="btnUpdate_Click" />
             <br />
         </div>

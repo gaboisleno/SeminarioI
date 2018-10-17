@@ -32,6 +32,7 @@ namespace Capa_Web {
                 foreach (Liga l in ligas)
                 {
                     DDListLigas.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
+                    DropDownList1.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
                 }
             }
 
@@ -73,7 +74,13 @@ namespace Capa_Web {
             Equipo n = new Equipo();
             n.setNombre(txbxUpdate.Text);
             n.setId(Int32.Parse(txbxId.Text));
+            n.setLiga(Convert.ToInt32(DropDownList1.SelectedItem.Value));
             sq.UpdateEquipo(n);
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

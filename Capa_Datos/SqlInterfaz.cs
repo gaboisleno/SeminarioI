@@ -298,7 +298,7 @@ namespace Capa_Datos {
 
             AbrirConexionSql(Conexion);
             //
-            Query.CommandText = "UPDATE EQUIPOS SET NOMBRE='"+n.getNombre()+"' WHERE ID="+n.getId()+";";
+            Query.CommandText = "UPDATE EQUIPOS SET NOMBRE='"+n.getNombre()+"', LIGA="+n.getLiga()+" WHERE ID="+n.getId()+";";
             Query.Connection = Conexion;
             consulta = Query.ExecuteReader();
 

@@ -46,6 +46,10 @@ body {
 }
 
 footer {
+    content: "Chapter: ";
+}
+
+footer {
     background-color: #777;
     padding: 10px;
     text-align: center;
