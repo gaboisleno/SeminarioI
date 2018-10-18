@@ -21,6 +21,7 @@
                 <li><a class="active" href="AdminPageEquipos.aspx" >Equipos</a></li>
                 <li><a href="AdminPageLigas.aspx">Ligas</a></li>
                 <li><a href="AdminPageUsuarios.aspx">Usuarios</a></li>
+                <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
                 
             </ul>
     </nav>
@@ -32,16 +33,22 @@
         <br />
         
         <div>
-            Nuevo Equipo (*)<br />
-            <asp:TextBox ID="txbxEquipo" placeholder="Nombre" runat="server"></asp:TextBox>
             <br />
-            Liga del Equipo (*)
+            <asp:RadioButton ID="rbtnNuevo" runat="server" AutoPostBack="True" Checked="True" OnCheckedChanged="rbtnNuevo_CheckedChanged" Text="Nuevo Equipo" />
+            <asp:RadioButton ID="rbtnBorrar" runat="server" AutoPostBack="True" OnCheckedChanged="rbtnBorrar_CheckedChanged" Text="Borrar Equipo" />
+            <asp:RadioButton ID="rbtnModifi" runat="server" AutoPostBack="True" OnCheckedChanged="rbtnModifi_CheckedChanged" Text="Modificar Equipo" />
             <br />
+            <br />
+            Nuevo Equipo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txbxEquipo" placeholder="Nombre" runat="server" OnTextChanged="txbxEquipo_TextChanged"></asp:TextBox>
+            <br />
+            Liga del Equipo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
             <asp:DropDownList ID="DDListLigas" runat="server" OnSelectedIndexChanged="DDListLigas_SelectedIndexChanged">
             </asp:DropDownList>
             <br />
-            <asp:Button ID="Button1" runat="server" Text="Nuevo Equipo" OnClick="Button1_Click" />
+            <br />
+            <asp:Button ID="btnNuevo" runat="server" Text="Nuevo Equipo" OnClick="Button1_Click" />
             <br />
             <br />
            
@@ -53,7 +60,7 @@
             <br />
             <br />
             Modificar Equipo<br />
-            <asp:TextBox ID="txbxId" placeholder="ID del equipo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txbxId" placeholder="ID del equipo" runat="server" OnTextChanged="txbxId_TextChanged"></asp:TextBox>
             (*)<br />
             <asp:TextBox ID="txbxUpdate" placeholder="Nuevo Nombre" runat="server"></asp:TextBox>
             (*)<br />
@@ -74,7 +81,7 @@
     </form>
 
     <footer>
-            © Copyright 2018 SemiFutbol® <span>Todos los derechos reservados</span>
+            © Copyright 2018 SemiFutbol® servados</span>
         </footer>
 </body>
 </html>

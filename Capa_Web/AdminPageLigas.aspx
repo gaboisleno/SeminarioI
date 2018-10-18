@@ -18,7 +18,7 @@
                 <li><a href="AdminPageEquipos.aspx" >Equipos</a></li>
                 <li><a href="#" class="active" >Ligas</a></li>
                 <li><a href="AdminPageUsuarios.aspx">Usuarios</a></li>
-                <li style="float:right"><a href="#">Cerrar sesion</a></li>
+                <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
             </ul>
     </nav>
         

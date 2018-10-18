@@ -20,6 +20,12 @@ namespace Capa_Web {
             GridView1.DataBind();
         }
 
+        protected void closeSession(object sender, EventArgs e)
+        {
+            Session["Autenticado"] = null;
+            Response.Redirect("Login.aspx");
+        }
+
         protected void rbtnAddAdmin_CheckedChanged(object sender, EventArgs e)
         {
             rbtnRmvAdmin.Checked = false;

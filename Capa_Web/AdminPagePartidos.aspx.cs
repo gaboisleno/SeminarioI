@@ -39,6 +39,12 @@ namespace Capa_Web {
             }
         }
 
+        protected void closeSession(object sender, EventArgs e)
+        {
+            Session["Autenticado"] = null;
+            Response.Redirect("Login.aspx");
+        }
+
         protected void DDListLiga_SelectedIndexChanged(object sender, EventArgs e)
         {
 

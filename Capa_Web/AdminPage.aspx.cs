@@ -14,6 +14,7 @@ namespace Capa_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Redirigir si no esta logueado
             if (Session["Autenticado"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -46,7 +47,7 @@ namespace Capa_Web
 
         protected void closeSession(object sender, EventArgs e)
         {
-            //Acciones
+            //Cerrar la sesion
             Session["Autenticado"] = null;
             Response.Redirect("Login.aspx");
         }

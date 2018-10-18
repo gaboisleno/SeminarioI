@@ -6,10 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Capa_Datos;
 
-namespace Capa_Web
-{
-    public partial class Inicio : System.Web.UI.Page
-    {
+namespace Capa_Web {
+    public partial class Inicio: System.Web.UI.Page {
         protected void Page_Load(object sender, EventArgs e)
         {
             Page.UnobtrusiveValidationMode = System.Web.UI.UnobtrusiveValidationMode.None;
@@ -23,8 +21,8 @@ namespace Capa_Web
 
             usr.setUsername(txbxUsr.Text.ToLower());
             usr.setPasswrd(txbxPsw.Text);
-            
-            
+
+
 
             if (sq.Identificarse(usr))
             {
@@ -37,15 +35,10 @@ namespace Capa_Web
                 else
                 {
                     Response.Redirect("Menu.aspx");
-                } 
+                }
             }
-
-      
-        }
-
-        protected void txbxUsr_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
+
+    

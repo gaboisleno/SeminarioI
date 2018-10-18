@@ -26,12 +26,16 @@ namespace Capa_Web {
                     DropDownList1.Items.Add(new ListItem(eq.getNombre(), eq.getId().ToString()));
                 }
 
-                
-
                 //Mostrar la tabla de equipos
                 GridView1.DataSource = sq.TraerConsulta("SELECT * FROM Ligas ORDER BY Nombre ASC;");
                 GridView1.DataBind();
             }
+        }
+
+        protected void closeSession(object sender, EventArgs e)
+        {
+            Session["Autenticado"] = null;
+            Response.Redirect("Login.aspx");
         }
 
         protected void DDListEquipos_SelectedIndexChanged(object sender, EventArgs e)

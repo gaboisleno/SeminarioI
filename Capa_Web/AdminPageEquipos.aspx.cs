@@ -35,10 +35,15 @@ namespace Capa_Web {
                     DropDownList1.Items.Add(new ListItem(l.getNombre(), l.getId().ToString()));
                 }
             }
-
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void closeSession(object sender, EventArgs e)
+        {
+            Session["Autenticado"] = null;
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
         {
             Equipo equipoTemp = new Equipo();
             equipoTemp.setNombre(txbxEquipo.Text);
@@ -79,6 +84,76 @@ namespace Capa_Web {
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rbtnNuevo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnNuevo.Checked) {
+                //
+                txbxEquipo.Enabled = true;
+                DDListLigas.Enabled = true;
+                btnNuevo.Enabled = true;
+                //
+                txbxDelete.Enabled = false;
+                btnDelete.Enabled = false;
+                //
+                txbxId.Enabled = false;
+                txbxUpdate.Enabled = false;
+                DropDownList1.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+
+        }
+
+        protected void rbtnBorrar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnBorrar.Checked) {
+                //
+                txbxEquipo.Enabled = false;
+                DDListLigas.Enabled = false;
+                btnNuevo.Enabled = false;
+                //
+                txbxDelete.Enabled = true;
+                btnDelete.Enabled = true;
+                //
+                txbxId.Enabled = false;
+                txbxUpdate.Enabled = false;
+                DropDownList1.Enabled = false;
+                btnUpdate.Enabled = false;
+            }
+        }
+
+        protected void rbtnModifi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnModifi.Checked) {
+                //
+                txbxEquipo.Enabled = false;
+                DDListLigas.Enabled = false;
+                btnNuevo.Enabled = false;
+                //
+                txbxDelete.Enabled = false;
+                btnDelete.Enabled = false;
+                //
+                txbxId.Enabled = true;
+                txbxUpdate.Enabled = true;
+                DropDownList1.Enabled = true;
+                btnUpdate.Enabled = true;
+            }
+        }
+
+        protected void txbxId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txbxEquipo_TextChanged(object sender, EventArgs e)
         {
 
         }
