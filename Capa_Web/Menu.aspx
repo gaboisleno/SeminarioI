@@ -17,10 +17,10 @@
     
     <nav>   
             <ul>
-                <li><a class="active" href="#" runat="server" onserverclick="GridPartidosTodos">Todos</a></li>
-                <li><a href="#" runat="server" onserverclick="GridPartidosHoy">Hoy</a></li>
-                <li><a href="#" runat="server" onserverclick="GridPartidosAyer">Ayer</a></li>
-                <li><a href="#">Noticias</a></li>
+                <li><a href="#" class="active" runat="server">Todos</a></li>
+                <li><a href="Hoy.aspx" runat="server">Hoy</a></li>
+                <li><a href="Ayer.aspx" runat="server">Ayer</a></li>
+                <li><a href="Noticias.aspx">Noticias</a></li>
                 <li style="float:right"><a href="#" runat="server" onserverclick="closeSession">Cerrar sesion</a></li>
             </ul>
     </nav>

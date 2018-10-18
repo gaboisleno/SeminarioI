@@ -17,16 +17,14 @@ namespace Capa_Web
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
-            GridView1.DataBind();
-
-
             if (Session["Autenticado"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
-            
+
+            GridView1.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
+            GridView1.DataBind();
+
         }
 
         protected void closeSession(object sender, EventArgs e)

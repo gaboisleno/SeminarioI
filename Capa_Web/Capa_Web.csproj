@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.10.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -73,10 +73,13 @@
     <Content Include="AdminPageLigas.aspx" />
     <Content Include="AdminPagePartidos.aspx" />
     <Content Include="AdminPageUsuarios.aspx" />
+    <Content Include="Ayer.aspx" />
     <Content Include="Css\Imgs\Banner.jpg" />
     <Content Include="Css\Style.css" />
+    <Content Include="Hoy.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Menu.aspx" />
+    <Content Include="Noticias.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -116,6 +119,20 @@
     <Compile Include="AdminPageUsuarios.aspx.designer.cs">
       <DependentUpon>AdminPageUsuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ayer.aspx.cs">
+      <DependentUpon>Ayer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ayer.aspx.designer.cs">
+      <DependentUpon>Ayer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Hoy.aspx.cs">
+      <DependentUpon>Hoy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hoy.aspx.designer.cs">
+      <DependentUpon>Hoy.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -129,6 +146,13 @@
     </Compile>
     <Compile Include="Menu.aspx.designer.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Noticias.aspx.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Noticias.aspx.designer.cs">
+      <DependentUpon>Noticias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
