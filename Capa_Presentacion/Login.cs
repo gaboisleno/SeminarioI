@@ -34,9 +34,13 @@ namespace Semi.Presentacion
 
             if (sq.Identificarse(user) == true)
             {
-                this.Hide();
+                /*this.Hide();
                 Menu mainMenu = new Menu();
                 mainMenu.Show();
+                */
+                AdminEquipos ad = new AdminEquipos();
+                this.Hide();
+                ad.Show();
             }
             else
             {

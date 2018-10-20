@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using Capa_Datos;
 
 namespace Semi.Presentacion {
-    public partial class AminEquipos: Form {
+    public partial class AdminEquipos: Form {
         SqlInterfaz sq = new SqlInterfaz();
 
-        public AminEquipos()
+        public AdminEquipos()
         {
             InitializeComponent();
             //Mostrar la tabla de equipos

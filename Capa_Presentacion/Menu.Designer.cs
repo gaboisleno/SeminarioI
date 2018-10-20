@@ -43,7 +43,7 @@
             this.TextInfo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TextInfo.Location = new System.Drawing.Point(12, 99);
             this.TextInfo.Name = "TextInfo";
-            this.TextInfo.Size = new System.Drawing.Size(594, 370);
+            this.TextInfo.Size = new System.Drawing.Size(660, 351);
             this.TextInfo.TabIndex = 0;
             this.TextInfo.Text = "";
             this.TextInfo.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(618, 481);
+            this.ClientSize = new System.Drawing.Size(684, 462);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
