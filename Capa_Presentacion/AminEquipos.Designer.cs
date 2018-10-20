@@ -26,19 +26,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.grdEquipos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEquipos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // grdEquipos
+            // 
+            this.grdEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEquipos.Location = new System.Drawing.Point(13, 94);
+            this.grdEquipos.Name = "grdEquipos";
+            this.grdEquipos.Size = new System.Drawing.Size(680, 283);
+            this.grdEquipos.TabIndex = 0;
+            this.grdEquipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquipos_CellContentClick);
             // 
             // AminEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(705, 389);
+            this.Controls.Add(this.grdEquipos);
             this.Name = "AminEquipos";
             this.Text = "AminEquipos";
+            ((System.ComponentModel.ISupportInitialize)(this.grdEquipos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridView grdEquipos;
     }
 }
