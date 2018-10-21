@@ -26,47 +26,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rbtnSetAdmin = new System.Windows.Forms.RadioButton();
+            this.rbtnRmvAdmin = new System.Windows.Forms.RadioButton();
+            this.rbtnDelUser = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txbxID = new System.Windows.Forms.TextBox();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // rbtnSetAdmin
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 22);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnSetAdmin.AutoSize = true;
+            this.rbtnSetAdmin.Location = new System.Drawing.Point(34, 27);
+            this.rbtnSetAdmin.Name = "rbtnSetAdmin";
+            this.rbtnSetAdmin.Size = new System.Drawing.Size(103, 17);
+            this.rbtnSetAdmin.TabIndex = 0;
+            this.rbtnSetAdmin.TabStop = true;
+            this.rbtnSetAdmin.Text = "Conceder Admin";
+            this.rbtnSetAdmin.UseVisualStyleBackColor = true;
+            this.rbtnSetAdmin.CheckedChanged += new System.EventHandler(this.rbtnSetAdmin_CheckedChanged);
             // 
-            // radioButton2
+            // rbtnRmvAdmin
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 45);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnRmvAdmin.AutoSize = true;
+            this.rbtnRmvAdmin.Location = new System.Drawing.Point(34, 50);
+            this.rbtnRmvAdmin.Name = "rbtnRmvAdmin";
+            this.rbtnRmvAdmin.Size = new System.Drawing.Size(85, 17);
+            this.rbtnRmvAdmin.TabIndex = 1;
+            this.rbtnRmvAdmin.TabStop = true;
+            this.rbtnRmvAdmin.Text = "Quitar Admin";
+            this.rbtnRmvAdmin.UseVisualStyleBackColor = true;
+            this.rbtnRmvAdmin.CheckedChanged += new System.EventHandler(this.rbtnRmvAdmin_CheckedChanged);
             // 
-            // radioButton3
+            // rbtnDelUser
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(12, 68);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnDelUser.AutoSize = true;
+            this.rbtnDelUser.Location = new System.Drawing.Point(34, 73);
+            this.rbtnDelUser.Name = "rbtnDelUser";
+            this.rbtnDelUser.Size = new System.Drawing.Size(92, 17);
+            this.rbtnDelUser.TabIndex = 2;
+            this.rbtnDelUser.TabStop = true;
+            this.rbtnDelUser.Text = "Borrar Usuario";
+            this.rbtnDelUser.UseVisualStyleBackColor = true;
+            this.rbtnDelUser.CheckedChanged += new System.EventHandler(this.rbtnDelUser_CheckedChanged);
             // 
             // dataGridView1
             // 
@@ -76,33 +80,44 @@
             this.dataGridView1.Size = new System.Drawing.Size(485, 438);
             this.dataGridView1.TabIndex = 3;
             // 
-            // textBox1
+            // txbxID
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 124);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
+            this.txbxID.Location = new System.Drawing.Point(34, 127);
+            this.txbxID.Name = "txbxID";
+            this.txbxID.Size = new System.Drawing.Size(100, 20);
+            this.txbxID.TabIndex = 4;
             // 
-            // button1
+            // btnApply
             // 
-            this.button1.Location = new System.Drawing.Point(13, 151);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Aplicar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnApply.Location = new System.Drawing.Point(47, 154);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 5;
+            this.btnApply.Text = "Aplicar";
+            this.btnApply.UseVisualStyleBackColor = true;
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(56, 108);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ID Usuario";
             // 
             // AdminUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnApply);
+            this.Controls.Add(this.txbxID);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.rbtnDelUser);
+            this.Controls.Add(this.rbtnRmvAdmin);
+            this.Controls.Add(this.rbtnSetAdmin);
             this.Name = "AdminUsers";
             this.Text = "AdminUsers";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -113,11 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtnSetAdmin;
+        private System.Windows.Forms.RadioButton rbtnRmvAdmin;
+        private System.Windows.Forms.RadioButton rbtnDelUser;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txbxID;
+        private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.Label label1;
     }
 }

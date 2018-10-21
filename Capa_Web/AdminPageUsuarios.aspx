@@ -32,7 +32,7 @@
          <br />
          <asp:TextBox ID="txbxId" placeholder="ID Usuario" runat="server"></asp:TextBox>
          <br />
-         <asp:Button ID="btnEditUser" runat="server" Text="Aplicar" OnClick="btnEditUser_Click" />
+         <asp:Button ID="btnEditUser" runat="server" Text="Aplicar" OnClick="btnEditUser_Click" style="height: 26px" />
          <br />
          <br />
         <br />
