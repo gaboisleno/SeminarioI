@@ -26,104 +26,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.grdLigas = new System.Windows.Forms.DataGridView();
+            this.txbxNewName = new System.Windows.Forms.TextBox();
+            this.cmbxEquipos = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.btnInsLiga = new System.Windows.Forms.Button();
+            this.txbxUpId = new System.Windows.Forms.TextBox();
+            this.cmbxCampeon = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txbxDelID = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdLigas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // grdLigas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(227, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(445, 438);
-            this.dataGridView1.TabIndex = 0;
+            this.grdLigas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdLigas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grdLigas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grdLigas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdLigas.Location = new System.Drawing.Point(227, 12);
+            this.grdLigas.Name = "grdLigas";
+            this.grdLigas.Size = new System.Drawing.Size(445, 438);
+            this.grdLigas.TabIndex = 0;
+            this.grdLigas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox1
+            // txbxNewName
             // 
-            this.textBox1.Location = new System.Drawing.Point(58, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txbxNewName.Location = new System.Drawing.Point(48, 56);
+            this.txbxNewName.Name = "txbxNewName";
+            this.txbxNewName.Size = new System.Drawing.Size(121, 20);
+            this.txbxNewName.TabIndex = 1;
             // 
-            // comboBox1
+            // cmbxEquipos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(48, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbxEquipos.FormattingEnabled = true;
+            this.cmbxEquipos.Location = new System.Drawing.Point(48, 111);
+            this.cmbxEquipos.Name = "cmbxEquipos";
+            this.cmbxEquipos.Size = new System.Drawing.Size(121, 21);
+            this.cmbxEquipos.TabIndex = 2;
+            this.cmbxEquipos.SelectedIndexChanged += new System.EventHandler(this.cmbxEquipos_SelectedIndexChanged);
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(175, 99);
+            this.checkBox1.Location = new System.Drawing.Point(175, 114);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnInsLiga
             // 
-            this.button1.Location = new System.Drawing.Point(71, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Nueva liga";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnInsLiga.Location = new System.Drawing.Point(71, 143);
+            this.btnInsLiga.Name = "btnInsLiga";
+            this.btnInsLiga.Size = new System.Drawing.Size(75, 23);
+            this.btnInsLiga.TabIndex = 4;
+            this.btnInsLiga.Text = "Nueva liga";
+            this.btnInsLiga.UseVisualStyleBackColor = true;
+            this.btnInsLiga.Click += new System.EventHandler(this.btnInsLiga_Click);
             // 
-            // textBox2
+            // txbxUpId
             // 
-            this.textBox2.Location = new System.Drawing.Point(58, 204);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txbxUpId.Location = new System.Drawing.Point(48, 201);
+            this.txbxUpId.Name = "txbxUpId";
+            this.txbxUpId.Size = new System.Drawing.Size(121, 20);
+            this.txbxUpId.TabIndex = 5;
             // 
-            // comboBox2
+            // cmbxCampeon
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(48, 243);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 6;
+            this.cmbxCampeon.FormattingEnabled = true;
+            this.cmbxCampeon.Location = new System.Drawing.Point(48, 256);
+            this.cmbxCampeon.Name = "cmbxCampeon";
+            this.cmbxCampeon.Size = new System.Drawing.Size(121, 21);
+            this.cmbxCampeon.TabIndex = 6;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 270);
+            this.button2.Location = new System.Drawing.Point(58, 288);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Nuevo Campeon";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // txbxDelID
             // 
-            this.textBox3.Location = new System.Drawing.Point(58, 352);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 8;
+            this.txbxDelID.Location = new System.Drawing.Point(48, 346);
+            this.txbxDelID.Name = "txbxDelID";
+            this.txbxDelID.Size = new System.Drawing.Size(121, 20);
+            this.txbxDelID.TabIndex = 8;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(71, 378);
+            this.button3.Location = new System.Drawing.Point(71, 377);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 9;
             this.button3.Text = "Borrar Liga";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -137,7 +147,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 78);
+            this.label2.Location = new System.Drawing.Point(41, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 13);
             this.label2.TabIndex = 11;
@@ -146,7 +156,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 188);
+            this.label3.Location = new System.Drawing.Point(88, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 12;
@@ -155,7 +165,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 227);
+            this.label4.Location = new System.Drawing.Point(82, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -164,7 +174,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 333);
+            this.label5.Location = new System.Drawing.Point(88, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 14;
@@ -181,18 +191,18 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txbxDelID);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbxCampeon);
+            this.Controls.Add(this.txbxUpId);
+            this.Controls.Add(this.btnInsLiga);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cmbxEquipos);
+            this.Controls.Add(this.txbxNewName);
+            this.Controls.Add(this.grdLigas);
             this.Name = "AdminLigas";
             this.Text = "AdminLigas";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdLigas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,15 +210,15 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.DataGridView grdLigas;
+        private System.Windows.Forms.TextBox txbxNewName;
+        private System.Windows.Forms.ComboBox cmbxEquipos;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button btnInsLiga;
+        private System.Windows.Forms.TextBox txbxUpId;
+        private System.Windows.Forms.ComboBox cmbxCampeon;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txbxDelID;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
