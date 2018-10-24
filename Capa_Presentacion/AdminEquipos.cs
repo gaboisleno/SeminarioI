@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Datos;
 
-namespace Semi.Presentacion {
+namespace Semi.Presentacion 
+{
     public partial class AdminEquipos: Form {
         SqlInterfaz sq = new SqlInterfaz();
         List<Liga> ligas = new List<Liga>();
@@ -20,20 +21,15 @@ namespace Semi.Presentacion {
             //Mostrar la tabla de equipos
             grdEquipos.DataSource = sq.TraerConsulta("SELECT * FROM equipos ORDER BY Nombre ASC;");
 
-            //Cargar los combobox
+            //Cargar comboboxes
             ligas = sq.TraerLigas();
-
-            cmbxInsLiga.DisplayMember = "Text";
-            cmbxInsLiga.ValueMember = "Value";
-
-            cmbxUpdLiga.DisplayMember = "Text";
-            cmbxUpdLiga.ValueMember = "Value";
-
             foreach (Liga eq in ligas)
             {
-                cmbxInsLiga.Items.Add(new { Text = eq.getNombre(), Value = eq.getId().ToString() });
-                cmbxUpdLiga.Items.Add(new { Text = eq.getNombre(), Value = eq.getId().ToString() });
-
+                ComboboxItem item = new ComboboxItem();
+                item.Text = eq.getNombre();
+                item.Value = eq.getId();
+                cmbxInsLiga.Items.Add(item);
+                cmbxUpdLiga.Items.Add(item);
             }
         }
 
@@ -51,7 +47,8 @@ namespace Semi.Presentacion {
         {
             Equipo equipoTemp = new Equipo();
             equipoTemp.setNombre(txbxInsNombre.Text);
-            equipoTemp.setId(Convert.ToInt32(cmbxInsLiga.ValueMember));
+            equipoTemp.setLiga(Convert.ToInt32((cmbxInsLiga.SelectedItem as ComboboxItem).Value));
+
 
             if (sq.NuevoEquipo(equipoTemp))
             {
@@ -61,7 +58,8 @@ namespace Semi.Presentacion {
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-            if (sq.DeleteEquipo(Int32.Parse(txbxDelId.Text))) {
+            if (sq.DeleteEquipo(Int32.Parse(txbxDelId.Text)))
+            {
                 txbxDelId.Text = "";
             }
         }
@@ -71,7 +69,7 @@ namespace Semi.Presentacion {
             Equipo n = new Equipo();
             n.setNombre(txbxUpdNombre.Text);
             n.setId(Int32.Parse(txbxUpdId.Text));
-            n.setLiga(Convert.ToInt32(cmbxUpdLiga.ValueMember));
+            n.setLiga(Convert.ToInt32((cmbxUpdLiga.SelectedItem as ComboboxItem).Value));
             sq.UpdateEquipo(n);
         }
 
@@ -81,3 +79,5 @@ namespace Semi.Presentacion {
         }
     }
 }
+
+
