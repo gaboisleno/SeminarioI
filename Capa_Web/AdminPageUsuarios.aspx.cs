@@ -51,5 +51,10 @@ namespace Capa_Web {
             else if (rbtnRmvAdmin.Checked) sq.AdminUser(id, 2); //quitar admin
             else if (rbtnRmvUser.Checked) sq.AdminUser(id, 3); //borrar usuario
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

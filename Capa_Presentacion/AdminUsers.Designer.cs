@@ -29,11 +29,11 @@
             this.rbtnSetAdmin = new System.Windows.Forms.RadioButton();
             this.rbtnRmvAdmin = new System.Windows.Forms.RadioButton();
             this.rbtnDelUser = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.grdUsers = new System.Windows.Forms.DataGridView();
             this.txbxID = new System.Windows.Forms.TextBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).BeginInit();
             this.SuspendLayout();
             // 
             // rbtnSetAdmin
@@ -72,13 +72,17 @@
             this.rbtnDelUser.UseVisualStyleBackColor = true;
             this.rbtnDelUser.CheckedChanged += new System.EventHandler(this.rbtnDelUser_CheckedChanged);
             // 
-            // dataGridView1
+            // grdUsers
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(187, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(485, 438);
-            this.dataGridView1.TabIndex = 3;
+            this.grdUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdUsers.Location = new System.Drawing.Point(187, 12);
+            this.grdUsers.Name = "grdUsers";
+            this.grdUsers.Size = new System.Drawing.Size(485, 438);
+            this.grdUsers.TabIndex = 3;
+            this.grdUsers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txbxID
             // 
@@ -114,13 +118,13 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.txbxID);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grdUsers);
             this.Controls.Add(this.rbtnDelUser);
             this.Controls.Add(this.rbtnRmvAdmin);
             this.Controls.Add(this.rbtnSetAdmin);
             this.Name = "AdminUsers";
             this.Text = "AdminUsers";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdUsers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,7 +135,7 @@
         private System.Windows.Forms.RadioButton rbtnSetAdmin;
         private System.Windows.Forms.RadioButton rbtnRmvAdmin;
         private System.Windows.Forms.RadioButton rbtnDelUser;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grdUsers;
         private System.Windows.Forms.TextBox txbxID;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Label label1;

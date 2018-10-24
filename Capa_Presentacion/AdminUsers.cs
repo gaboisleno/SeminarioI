@@ -17,6 +17,7 @@ namespace Semi.Presentacion {
         public AdminUsers()
         {
             InitializeComponent();
+            grdUsers.DataSource = sq.TraerConsulta("SELECT * FROM Usuarios;");
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace Semi.Presentacion {
                 rbtnSetAdmin.Checked = false;
                 rbtnRmvAdmin.Checked = false;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

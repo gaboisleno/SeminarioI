@@ -38,7 +38,7 @@ namespace Semi.Presentacion
                 Menu mainMenu = new Menu();
                 mainMenu.Show();
                 */
-                AdminEquipos ad = new AdminEquipos();
+                AdminPartidos ad = new AdminPartidos();
                 this.Hide();
                 ad.Show();
             }
