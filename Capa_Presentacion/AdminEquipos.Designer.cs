@@ -42,6 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdEquipos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdEquipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdEquipos.Location = new System.Drawing.Point(167, 12);
+            this.grdEquipos.Location = new System.Drawing.Point(167, 32);
             this.grdEquipos.Name = "grdEquipos";
-            this.grdEquipos.Size = new System.Drawing.Size(505, 438);
+            this.grdEquipos.Size = new System.Drawing.Size(505, 388);
             this.grdEquipos.TabIndex = 0;
             this.grdEquipos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdEquipos_CellContentClick);
             // 
@@ -187,11 +188,22 @@
             this.label6.Text = "Liga";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(596, 427);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // AdminEquipos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -234,5 +246,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }

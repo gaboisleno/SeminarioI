@@ -118,16 +118,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(531, 59);
+            this.button1.Location = new System.Drawing.Point(583, 59);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(89, 23);
             this.button1.TabIndex = 11;
-            this.button1.Text = "Salir";
+            this.button1.Text = "Cerrar Sesion";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(531, 18);
+            this.button2.Location = new System.Drawing.Point(583, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;

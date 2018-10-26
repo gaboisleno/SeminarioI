@@ -45,6 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grdPartidos = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdPartidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             this.rbtnIns.AutoSize = true;
             this.rbtnIns.Checked = true;
-            this.rbtnIns.Location = new System.Drawing.Point(210, 16);
+            this.rbtnIns.Location = new System.Drawing.Point(191, 14);
             this.rbtnIns.Name = "rbtnIns";
             this.rbtnIns.Size = new System.Drawing.Size(93, 17);
             this.rbtnIns.TabIndex = 0;
@@ -64,7 +65,7 @@
             // rbtnUpd
             // 
             this.rbtnUpd.AutoSize = true;
-            this.rbtnUpd.Location = new System.Drawing.Point(309, 16);
+            this.rbtnUpd.Location = new System.Drawing.Point(290, 14);
             this.rbtnUpd.Name = "rbtnUpd";
             this.rbtnUpd.Size = new System.Drawing.Size(104, 17);
             this.rbtnUpd.TabIndex = 1;
@@ -75,7 +76,7 @@
             // rbtnDel
             // 
             this.rbtnDel.AutoSize = true;
-            this.rbtnDel.Location = new System.Drawing.Point(419, 16);
+            this.rbtnDel.Location = new System.Drawing.Point(400, 14);
             this.rbtnDel.Name = "rbtnDel";
             this.rbtnDel.Size = new System.Drawing.Size(89, 17);
             this.rbtnDel.TabIndex = 2;
@@ -86,7 +87,7 @@
             // cmbxLiga
             // 
             this.cmbxLiga.FormattingEnabled = true;
-            this.cmbxLiga.Location = new System.Drawing.Point(350, 67);
+            this.cmbxLiga.Location = new System.Drawing.Point(273, 62);
             this.cmbxLiga.Name = "cmbxLiga";
             this.cmbxLiga.Size = new System.Drawing.Size(121, 21);
             this.cmbxLiga.TabIndex = 3;
@@ -94,7 +95,7 @@
             // cmbxLocal
             // 
             this.cmbxLocal.FormattingEnabled = true;
-            this.cmbxLocal.Location = new System.Drawing.Point(350, 94);
+            this.cmbxLocal.Location = new System.Drawing.Point(273, 89);
             this.cmbxLocal.Name = "cmbxLocal";
             this.cmbxLocal.Size = new System.Drawing.Size(121, 21);
             this.cmbxLocal.TabIndex = 4;
@@ -102,44 +103,44 @@
             // cmbxVisitante
             // 
             this.cmbxVisitante.FormattingEnabled = true;
-            this.cmbxVisitante.Location = new System.Drawing.Point(350, 121);
+            this.cmbxVisitante.Location = new System.Drawing.Point(273, 116);
             this.cmbxVisitante.Name = "cmbxVisitante";
             this.cmbxVisitante.Size = new System.Drawing.Size(121, 21);
             this.cmbxVisitante.TabIndex = 5;
             // 
             // txbxDate
             // 
-            this.txbxDate.Location = new System.Drawing.Point(350, 148);
+            this.txbxDate.Location = new System.Drawing.Point(273, 143);
             this.txbxDate.Name = "txbxDate";
             this.txbxDate.Size = new System.Drawing.Size(121, 20);
             this.txbxDate.TabIndex = 6;
             // 
             // txbxHour
             // 
-            this.txbxHour.Location = new System.Drawing.Point(350, 174);
+            this.txbxHour.Location = new System.Drawing.Point(273, 169);
             this.txbxHour.Name = "txbxHour";
             this.txbxHour.Size = new System.Drawing.Size(121, 20);
             this.txbxHour.TabIndex = 7;
             // 
             // txbxGoalL
             // 
-            this.txbxGoalL.Location = new System.Drawing.Point(350, 200);
+            this.txbxGoalL.Location = new System.Drawing.Point(273, 195);
             this.txbxGoalL.Name = "txbxGoalL";
             this.txbxGoalL.Size = new System.Drawing.Size(121, 20);
             this.txbxGoalL.TabIndex = 8;
             // 
             // txbxGoalV
             // 
-            this.txbxGoalV.Location = new System.Drawing.Point(350, 226);
+            this.txbxGoalV.Location = new System.Drawing.Point(273, 221);
             this.txbxGoalV.Name = "txbxGoalV";
             this.txbxGoalV.Size = new System.Drawing.Size(121, 20);
             this.txbxGoalV.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(298, 267);
+            this.button1.Location = new System.Drawing.Point(273, 247);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 10;
             this.button1.Text = "Aplicar";
             this.button1.UseVisualStyleBackColor = true;
@@ -148,7 +149,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 71);
+            this.label1.Location = new System.Drawing.Point(400, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(202, 13);
             this.label1.TabIndex = 11;
@@ -157,7 +158,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(185, 98);
+            this.label2.Location = new System.Drawing.Point(400, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 13);
             this.label2.TabIndex = 12;
@@ -166,7 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(177, 125);
+            this.label3.Location = new System.Drawing.Point(400, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 13);
             this.label3.TabIndex = 13;
@@ -175,7 +176,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 152);
+            this.label4.Location = new System.Drawing.Point(400, 146);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 13);
             this.label4.TabIndex = 14;
@@ -184,7 +185,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 178);
+            this.label5.Location = new System.Drawing.Point(400, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 13);
             this.label5.TabIndex = 15;
@@ -193,7 +194,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(205, 204);
+            this.label6.Location = new System.Drawing.Point(400, 198);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 13);
             this.label6.TabIndex = 16;
@@ -202,7 +203,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(191, 230);
+            this.label7.Location = new System.Drawing.Point(400, 224);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(137, 13);
             this.label7.TabIndex = 17;
@@ -220,11 +221,22 @@
             this.grdPartidos.TabIndex = 18;
             this.grdPartidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdPartidos_CellContentClick);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(597, 271);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Salir";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // AdminPartidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.grdPartidos);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -274,5 +286,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView grdPartidos;
+        private System.Windows.Forms.Button button2;
     }
 }

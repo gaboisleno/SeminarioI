@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdLigas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,13 +55,13 @@
             this.grdLigas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdLigas.Location = new System.Drawing.Point(227, 12);
             this.grdLigas.Name = "grdLigas";
-            this.grdLigas.Size = new System.Drawing.Size(445, 438);
+            this.grdLigas.Size = new System.Drawing.Size(445, 388);
             this.grdLigas.TabIndex = 0;
             this.grdLigas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txbxNewName
             // 
-            this.txbxNewName.Location = new System.Drawing.Point(48, 56);
+            this.txbxNewName.Location = new System.Drawing.Point(48, 46);
             this.txbxNewName.Name = "txbxNewName";
             this.txbxNewName.Size = new System.Drawing.Size(121, 20);
             this.txbxNewName.TabIndex = 1;
@@ -68,7 +69,7 @@
             // cmbxEquipos
             // 
             this.cmbxEquipos.FormattingEnabled = true;
-            this.cmbxEquipos.Location = new System.Drawing.Point(48, 111);
+            this.cmbxEquipos.Location = new System.Drawing.Point(48, 101);
             this.cmbxEquipos.Name = "cmbxEquipos";
             this.cmbxEquipos.Size = new System.Drawing.Size(121, 21);
             this.cmbxEquipos.TabIndex = 2;
@@ -77,7 +78,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(175, 114);
+            this.checkBox1.Location = new System.Drawing.Point(175, 104);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             // btnInsLiga
             // 
-            this.btnInsLiga.Location = new System.Drawing.Point(71, 143);
+            this.btnInsLiga.Location = new System.Drawing.Point(71, 133);
             this.btnInsLiga.Name = "btnInsLiga";
             this.btnInsLiga.Size = new System.Drawing.Size(75, 23);
             this.btnInsLiga.TabIndex = 4;
@@ -95,7 +96,7 @@
             // 
             // txbxUpId
             // 
-            this.txbxUpId.Location = new System.Drawing.Point(48, 201);
+            this.txbxUpId.Location = new System.Drawing.Point(51, 210);
             this.txbxUpId.Name = "txbxUpId";
             this.txbxUpId.Size = new System.Drawing.Size(121, 20);
             this.txbxUpId.TabIndex = 5;
@@ -103,14 +104,14 @@
             // cmbxCampeon
             // 
             this.cmbxCampeon.FormattingEnabled = true;
-            this.cmbxCampeon.Location = new System.Drawing.Point(48, 256);
+            this.cmbxCampeon.Location = new System.Drawing.Point(51, 265);
             this.cmbxCampeon.Name = "cmbxCampeon";
             this.cmbxCampeon.Size = new System.Drawing.Size(121, 21);
             this.cmbxCampeon.TabIndex = 6;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 288);
+            this.button2.Location = new System.Drawing.Point(61, 297);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 23);
             this.button2.TabIndex = 7;
@@ -120,14 +121,14 @@
             // 
             // txbxDelID
             // 
-            this.txbxDelID.Location = new System.Drawing.Point(48, 346);
+            this.txbxDelID.Location = new System.Drawing.Point(48, 381);
             this.txbxDelID.Name = "txbxDelID";
             this.txbxDelID.Size = new System.Drawing.Size(121, 20);
             this.txbxDelID.TabIndex = 8;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(71, 377);
+            this.button3.Location = new System.Drawing.Point(71, 412);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 9;
@@ -138,7 +139,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(55, 32);
+            this.label1.Location = new System.Drawing.Point(55, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 13);
             this.label1.TabIndex = 10;
@@ -147,7 +148,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 87);
+            this.label2.Location = new System.Drawing.Point(41, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 13);
             this.label2.TabIndex = 11;
@@ -156,7 +157,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 177);
+            this.label3.Location = new System.Drawing.Point(91, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 12;
@@ -165,7 +166,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 232);
+            this.label4.Location = new System.Drawing.Point(85, 241);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 13;
@@ -174,17 +175,28 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(88, 322);
+            this.label5.Location = new System.Drawing.Point(88, 357);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 13);
             this.label5.TabIndex = 14;
             this.label5.Text = "ID Liga";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(596, 411);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Salir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdminLigas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -225,5 +237,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

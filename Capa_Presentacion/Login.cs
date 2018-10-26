@@ -30,23 +30,26 @@ namespace Semi.Presentacion
         {
             Usuario user = new Usuario(txbxUser.Text.ToLower(), txbxPasswrd.Text.ToLower());
 
-      
+            if (sq.Identificarse(user))
+            {
 
-            if (sq.Identificarse(user) == true)
-            {
-                /*this.Hide();
-                Menu mainMenu = new Menu();
-                mainMenu.Show();
-                */
-                AdminPartidos ad = new AdminPartidos();
-                this.Hide();
-                ad.Show();
+                if (user.getRol().Equals("ADMIN"))
+                {
+                    AdminMenu admMenu = new AdminMenu();
+                    this.Hide();
+                    admMenu.ShowDialog();
+                    
+                }
+                else
+                {
+                    Menu mainMenu = new Menu();
+                    this.Hide();
+                    mainMenu.ShowDialog();
+                }
+                this.Show();
+                this.txbxUser.Text = "";
+                this.txbxPasswrd.Text = "";
             }
-            else
-            {
-                MessageBox.Show("Usuario y/o contraseña incorrectos");
-            }
-        
         }
 
         private void txbxUser_TextChanged(object sender, EventArgs e)
@@ -56,9 +59,10 @@ namespace Semi.Presentacion
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
             Register register = new Register();
-            register.Show();
+            this.Hide();
+            register.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -26,12 +26,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txbxUsr = new System.Windows.Forms.TextBox();
+            this.txbxPsw = new System.Windows.Forms.TextBox();
+            this.txbxConfirm = new System.Windows.Forms.TextBox();
+            this.txbxMail = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chckMail = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,43 +39,43 @@
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txbxUsr
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txbxUsr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(213, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txbxUsr.Location = new System.Drawing.Point(213, 72);
+            this.txbxUsr.Name = "txbxUsr";
+            this.txbxUsr.Size = new System.Drawing.Size(100, 20);
+            this.txbxUsr.TabIndex = 1;
             // 
-            // textBox2
+            // txbxPsw
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txbxPsw.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(213, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.txbxPsw.Location = new System.Drawing.Point(213, 99);
+            this.txbxPsw.Name = "txbxPsw";
+            this.txbxPsw.PasswordChar = '*';
+            this.txbxPsw.Size = new System.Drawing.Size(100, 20);
+            this.txbxPsw.TabIndex = 2;
             // 
-            // textBox3
+            // txbxConfirm
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txbxConfirm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(213, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 3;
+            this.txbxConfirm.Location = new System.Drawing.Point(213, 126);
+            this.txbxConfirm.Name = "txbxConfirm";
+            this.txbxConfirm.PasswordChar = '*';
+            this.txbxConfirm.Size = new System.Drawing.Size(100, 20);
+            this.txbxConfirm.TabIndex = 3;
             // 
-            // textBox4
+            // txbxMail
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txbxMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(213, 153);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 4;
+            this.txbxMail.Location = new System.Drawing.Point(213, 153);
+            this.txbxMail.Name = "txbxMail";
+            this.txbxMail.Size = new System.Drawing.Size(100, 20);
+            this.txbxMail.TabIndex = 4;
             // 
             // button1
             // 
@@ -87,20 +87,21 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // checkBox1
+            // chckMail
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chckMail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(205, 179);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Deseo recibir spam";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chckMail.AutoSize = true;
+            this.chckMail.Checked = true;
+            this.chckMail.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chckMail.Location = new System.Drawing.Point(205, 179);
+            this.chckMail.Name = "chckMail";
+            this.chckMail.Size = new System.Drawing.Size(116, 17);
+            this.chckMail.TabIndex = 5;
+            this.chckMail.Text = "Deseo recibir spam";
+            this.chckMail.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -167,12 +168,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chckMail);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbxMail);
+            this.Controls.Add(this.txbxConfirm);
+            this.Controls.Add(this.txbxPsw);
+            this.Controls.Add(this.txbxUsr);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Register";
             this.Text = "SEMIFUTBOL - Registro";
@@ -183,12 +184,12 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txbxUsr;
+        private System.Windows.Forms.TextBox txbxPsw;
+        private System.Windows.Forms.TextBox txbxConfirm;
+        private System.Windows.Forms.TextBox txbxMail;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chckMail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
