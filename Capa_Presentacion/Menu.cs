@@ -12,20 +12,21 @@ using Capa_Datos;
 
 namespace Semi.Presentacion {
     public partial class Menu: Form {
+        SqlInterfaz sq = new SqlInterfaz();
 
- 
         public Menu()
         {
             InitializeComponent();
-            SqlInterfaz sq = new SqlInterfaz();
+            
             List<Partido> partidos = new List<Partido>();
 
+            grdMenu.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
 
             partidos = sq.TraerPartidos();
             //Mostrar partidos
-            foreach (Partido p in partidos) {
-                TextInfo.Text = TextInfo.Text + p.getLiga() + " " +p.getFecha()+"\n"+p.getLocal()+" [ "+p.getGolLocal()+" : "+p.getGolVisitante()+" ] "+p.getVisitante()+"\n\n";
-            }
+          //  foreach (Partido p in partidos) {
+           //     TextInfo.Text = TextInfo.Text + p.getLiga() + " " +p.getFecha()+"\n"+p.getLocal()+" [ "+p.getGolLocal()+" : "+p.getGolVisitante()+" ] "+p.getVisitante()+"\n\n";
+            //}
             
 
 
@@ -64,6 +65,21 @@ namespace Semi.Presentacion {
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            grdMenu.DataSource = sq.TraerConsulta("SELECT * FROM partidos_todos;");
+        }
+
+        private void rbtnHoy_CheckedChanged(object sender, EventArgs e)
+        {
+            grdMenu.DataSource = sq.TraerConsulta("SELECT * FROM partidos_hoy;");
+        }
+
+        private void rbtnAyer_CheckedChanged(object sender, EventArgs e)
+        {
+            grdMenu.DataSource = sq.TraerConsulta("SELECT * FROM partidos_ayer;");
         }
     }
 

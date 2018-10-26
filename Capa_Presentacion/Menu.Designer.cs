@@ -26,7 +26,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TextInfo = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,17 +35,9 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.grdMenu = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // TextInfo
-            // 
-            this.TextInfo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TextInfo.Location = new System.Drawing.Point(12, 99);
-            this.TextInfo.Name = "TextInfo";
-            this.TextInfo.Size = new System.Drawing.Size(660, 351);
-            this.TextInfo.TabIndex = 0;
-            this.TextInfo.Text = "";
-            this.TextInfo.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -93,6 +84,7 @@
             this.rbtnHoy.TabStop = true;
             this.rbtnHoy.Text = "Partidos Hoy";
             this.rbtnHoy.UseVisualStyleBackColor = true;
+            this.rbtnHoy.CheckedChanged += new System.EventHandler(this.rbtnHoy_CheckedChanged);
             // 
             // rbtnAyer
             // 
@@ -104,6 +96,7 @@
             this.rbtnAyer.TabStop = true;
             this.rbtnAyer.Text = "Partidos Ayer";
             this.rbtnAyer.UseVisualStyleBackColor = true;
+            this.rbtnAyer.CheckedChanged += new System.EventHandler(this.rbtnAyer_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -115,6 +108,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Todos";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // button1
             // 
@@ -135,11 +129,20 @@
             this.button2.Text = "Opciones";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // grdMenu
+            // 
+            this.grdMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMenu.Location = new System.Drawing.Point(12, 119);
+            this.grdMenu.Name = "grdMenu";
+            this.grdMenu.Size = new System.Drawing.Size(660, 331);
+            this.grdMenu.TabIndex = 13;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.grdMenu);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.radioButton3);
@@ -149,18 +152,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.TextInfo);
             this.Name = "Menu";
             this.Text = "SEMIFUTBOL - Inicio";
             this.Load += new System.EventHandler(this.Menu_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.RichTextBox TextInfo;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label1;
@@ -170,5 +171,6 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView grdMenu;
     }
 }
