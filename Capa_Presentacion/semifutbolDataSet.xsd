@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="semifutbolDataSet" targetNamespace="http://tempuri.org/semifutbolDataSet.xsd" xmlns:mstns="http://tempuri.org/semifutbolDataSet.xsd" xmlns="http://tempuri.org/semifutbolDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="semifutbolConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="semifutbolConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Semi.Presentacion.Properties.Settings.GlobalReference.Default.semifutbolConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="equiposTableAdapter" GeneratorDataComponentClassName="equiposTableAdapter" Name="equipos" UserDataComponentName="equiposTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.equipos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, NOMBRE, LIGA FROM equipos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ligasTableAdapter" GeneratorDataComponentClassName="ligasTableAdapter" Name="ligas" UserDataComponentName="ligasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.ligas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, NOMBRE, CAMPEON_ACTUAL FROM ligas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partidosTableAdapter" GeneratorDataComponentClassName="partidosTableAdapter" Name="partidos" UserDataComponentName="partidosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.partidos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FECHA, HORARIO, LOCAL, VISITANTE, GOL_LOCAL, GOL_VISITANTE, LIGA FROM partidos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usuariosTableAdapter" GeneratorDataComponentClassName="usuariosTableAdapter" Name="usuarios" UserDataComponentName="usuariosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.usuarios" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT USUARIO, PASSWRD, ROL, ID_USR, E_MAIL FROM usuarios</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partidos_ayerTableAdapter" GeneratorDataComponentClassName="partidos_ayerTableAdapter" Name="partidos_ayer" UserDataComponentName="partidos_ayerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.partidos_ayer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FECHA, LOCAL, L, VISITANTE, V, LIGA FROM semifutbol.partidos_ayer</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partidos_hoyTableAdapter" GeneratorDataComponentClassName="partidos_hoyTableAdapter" Name="partidos_hoy" UserDataComponentName="partidos_hoyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.partidos_hoy" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FECHA, LOCAL, L, VISITANTE, V, LIGA FROM semifutbol.partidos_hoy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="partidos_todosTableAdapter" GeneratorDataComponentClassName="partidos_todosTableAdapter" Name="partidos_todos" UserDataComponentName="partidos_todosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="semifutbolConnectionString (Settings)" DbObjectName="semifutbol.partidos_todos" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT FECHA, HORARIO, LOCAL, L, VISITANTE, V, LIGA FROM semifutbol.partidos_todos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="semifutbolDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="semifutbolDataSet" msprop:Generator_UserDSName="semifutbolDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="equipos" msprop:Generator_TableClassName="equiposDataTable" msprop:Generator_TableVarName="tableequipos" msprop:Generator_TablePropName="equipos" msprop:Generator_RowDeletingName="equiposRowDeleting" msprop:Generator_RowChangingName="equiposRowChanging" msprop:Generator_RowEvHandlerName="equiposRowChangeEventHandler" msprop:Generator_RowDeletedName="equiposRowDeleted" msprop:Generator_UserTableName="equipos" msprop:Generator_RowChangedName="equiposRowChanged" msprop:Generator_RowEvArgName="equiposRowChangeEvent" msprop:Generator_RowClassName="equiposRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ligas" msprop:Generator_TableClassName="ligasDataTable" msprop:Generator_TableVarName="tableligas" msprop:Generator_TablePropName="ligas" msprop:Generator_RowDeletingName="ligasRowDeleting" msprop:Generator_RowChangingName="ligasRowChanging" msprop:Generator_RowEvHandlerName="ligasRowChangeEventHandler" msprop:Generator_RowDeletedName="ligasRowDeleted" msprop:Generator_UserTableName="ligas" msprop:Generator_RowChangedName="ligasRowChanged" msprop:Generator_RowEvArgName="ligasRowChangeEvent" msprop:Generator_RowClassName="ligasRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="partidos" msprop:Generator_TableClassName="partidosDataTable" msprop:Generator_TableVarName="tablepartidos" msprop:Generator_TablePropName="partidos" msprop:Generator_RowDeletingName="partidosRowDeleting" msprop:Generator_RowChangingName="partidosRowChanging" msprop:Generator_RowEvHandlerName="partidosRowChangeEventHandler" msprop:Generator_RowDeletedName="partidosRowDeleted" msprop:Generator_UserTableName="partidos" msprop:Generator_RowChangedName="partidosRowChanged" msprop:Generator_RowEvArgName="partidosRowChangeEvent" msprop:Generator_RowClassName="partidosRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usuarios" msprop:Generator_TableClassName="usuariosDataTable" msprop:Generator_TableVarName="tableusuarios" msprop:Generator_TablePropName="usuarios" msprop:Generator_RowDeletingName="usuariosRowDeleting" msprop:Generator_RowChangingName="usuariosRowChanging" msprop:Generator_RowEvHandlerName="usuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="usuariosRowDeleted" msprop:Generator_UserTableName="usuarios" msprop:Generator_RowChangedName="usuariosRowChanged" msprop:Generator_RowEvArgName="usuariosRowChangeEvent" msprop:Generator_RowClassName="usuariosRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="partidos_ayer" msprop:Generator_TableClassName="partidos_ayerDataTable" msprop:Generator_TableVarName="tablepartidos_ayer" msprop:Generator_TablePropName="partidos_ayer" msprop:Generator_RowDeletingName="partidos_ayerRowDeleting" msprop:Generator_RowChangingName="partidos_ayerRowChanging" msprop:Generator_RowEvHandlerName="partidos_ayerRowChangeEventHandler" msprop:Generator_RowDeletedName="partidos_ayerRowDeleted" msprop:Generator_UserTableName="partidos_ayer" msprop:Generator_RowChangedName="partidos_ayerRowChanged" msprop:Generator_RowEvArgName="partidos_ayerRowChangeEvent" msprop:Generator_RowClassName="partidos_ayerRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="partidos_hoy" msprop:Generator_TableClassName="partidos_hoyDataTable" msprop:Generator_TableVarName="tablepartidos_hoy" msprop:Generator_TablePropName="partidos_hoy" msprop:Generator_RowDeletingName="partidos_hoyRowDeleting" msprop:Generator_RowChangingName="partidos_hoyRowChanging" msprop:Generator_RowEvHandlerName="partidos_hoyRowChangeEventHandler" msprop:Generator_RowDeletedName="partidos_hoyRowDeleted" msprop:Generator_UserTableName="partidos_hoy" msprop:Generator_RowChangedName="partidos_hoyRowChanged" msprop:Generator_RowEvArgName="partidos_hoyRowChangeEvent" msprop:Generator_RowClassName="partidos_hoyRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="partidos_todos" msprop:Generator_TableClassName="partidos_todosDataTable" msprop:Generator_TableVarName="tablepartidos_todos" msprop:Generator_TablePropName="partidos_todos" msprop:Generator_RowDeletingName="partidos_todosRowDeleting" msprop:Generator_RowChangingName="partidos_todosRowChanging" msprop:Generator_RowEvHandlerName="partidos_todosRowChangeEventHandler" msprop:Generator_RowDeletedName="partidos_todosRowDeleted" msprop:Generator_UserTableName="partidos_todos" msprop:Generator_RowChangedName="partidos_todosRowChanged" msprop:Generator_RowEvArgName="partidos_todosRowChangeEvent" msprop:Generator_RowClassName="partidos_todosRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
