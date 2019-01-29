@@ -32,12 +32,13 @@
             this.grdTodos = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdTodos)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(150, 28);
+            this.button1.Location = new System.Drawing.Point(30, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 23);
             this.button1.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(270, 28);
+            this.button2.Location = new System.Drawing.Point(150, 28);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 23);
             this.button2.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(390, 28);
+            this.button3.Location = new System.Drawing.Point(150, 57);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 23);
             this.button3.TabIndex = 2;
@@ -71,9 +72,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdTodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdTodos.Location = new System.Drawing.Point(30, 57);
+            this.grdTodos.Location = new System.Drawing.Point(30, 112);
             this.grdTodos.Name = "grdTodos";
-            this.grdTodos.Size = new System.Drawing.Size(643, 393);
+            this.grdTodos.Size = new System.Drawing.Size(643, 338);
             this.grdTodos.TabIndex = 3;
             this.grdTodos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -97,11 +98,22 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(270, 28);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 6;
+            this.button5.Text = "Reporte";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.grdTodos);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.DataGridView grdTodos;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Button button5;
     }
 }

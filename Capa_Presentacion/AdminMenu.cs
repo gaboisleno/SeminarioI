@@ -60,6 +60,14 @@ namespace Semi.Presentacion {
             au.ShowDialog();
             this.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Report rep = new Report();
+            this.Hide();
+            rep.ShowDialog();
+            this.Show();
+        }
     }
     
 }
